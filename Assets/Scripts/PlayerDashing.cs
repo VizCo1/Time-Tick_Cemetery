@@ -8,20 +8,19 @@ public class PlayerDashing : MonoBehaviour
 {
 
     [SerializeField] private float _dashingPower = 24f;
-    [SerializeField] private float _dashingCoolDown = 0.5f;
 
     private PlayerMovement _playerMovement;
     private bool _canDash = false;
     private bool _isDashing = false;
     private Rigidbody _rigidbody;
-    private BoxCollider _boxCollider;
+    private CapsuleCollider _capsuleCollider;
     private FenceHole _fencheHole;
 
     private void Awake()
     {
         _playerMovement = GetComponent<PlayerMovement>();
         _rigidbody = GetComponent<Rigidbody>();
-        _boxCollider = GetComponent<BoxCollider>();
+        _capsuleCollider = GetComponent<CapsuleCollider>();
     }
 
     private void Start()
@@ -83,7 +82,7 @@ public class PlayerDashing : MonoBehaviour
     {
         _canDash = false;
         _isDashing = true;
-        _boxCollider.isTrigger = true;
+        _capsuleCollider.isTrigger = true;
         _playerMovement.SetIsDashing(_isDashing);
     }
 
@@ -93,7 +92,7 @@ public class PlayerDashing : MonoBehaviour
         //_fencheHole = null;
 
         _isDashing = false;
-        _boxCollider.isTrigger = false;
+        _capsuleCollider.isTrigger = false;
         _rigidbody.velocity = Vector3.zero;
         _playerMovement.SetIsDashing(_isDashing);
     }

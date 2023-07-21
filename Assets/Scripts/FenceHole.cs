@@ -33,12 +33,6 @@ public class FenceHole : MonoBehaviour
 
     public Vector3 GetStartingDashPosition(Vector3 playerPosition)
     {
-        float distanceStartingPoint01 = Vector3.Distance(playerPosition, _startingPoint01.position);
-
-        float distanceStartingPoint02 = Vector3.Distance(playerPosition, _startingPoint02.position);
-
-        float distanceFencePlayer = Vector3.Distance(playerPosition, transform.position);
-
         if (_facingDirection == FacingDirection.Facing_X)
         {
             // Correct player's Z position
@@ -49,27 +43,5 @@ public class FenceHole : MonoBehaviour
             // Correct player's X position
             return new Vector3(transform.position.x, playerPosition.y, playerPosition.z);
         }
-
-        /*if (distanceFencePlayer < distanceStartingPoint01 && distanceFencePlayer < distanceStartingPoint02)
-        {
-            if (_facingDirection == FacingDirection.Facing_X)
-            {
-                // Correct player's Z position
-                return new Vector3(playerPosition.x, playerPosition.y, transform.position.z);
-            }
-            else
-            {
-                // Correct player's X position
-                return new Vector3(transform.position.x, playerPosition.y, playerPosition.z);
-            }
-        }
-        else if (distanceStartingPoint01 < distanceStartingPoint02)
-        {
-            return _startingPoint01.position;
-        }
-        else
-        {
-            return _startingPoint02.position;
-        }*/
     }
 }
