@@ -41,7 +41,6 @@ public class Quadrant : MonoBehaviour
         _variants[_currentVariantIndex].SetActive(false);
         _currentVariantIndex = newIndex;
         _variants[_currentVariantIndex].SetActive(true);
-        Debug.Log("A " + _currentVariantIndex);
     }
 
     private void OnTriggerEnter(Collider other)
