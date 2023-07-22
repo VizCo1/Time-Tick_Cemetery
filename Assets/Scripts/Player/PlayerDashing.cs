@@ -23,11 +23,6 @@ public class PlayerDashing : MonoBehaviour
         _capsuleCollider = GetComponent<CapsuleCollider>();
     }
 
-    private void Start()
-    {
-
-    }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && _canDash && !_isDashing)
@@ -67,6 +62,7 @@ public class PlayerDashing : MonoBehaviour
         {
             _fencheHole = fencheHole;
             _canDash = true;
+            DashUI.Instance.Show();
         }   
     }
 
@@ -74,7 +70,8 @@ public class PlayerDashing : MonoBehaviour
     {
         if (other.TryGetComponent(out FenceHole fencheHole))
         {
-            EndingResetDash();     
+            EndingResetDash();    
+            DashUI.Instance.Hide();
         }
     }
 
