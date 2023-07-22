@@ -35,7 +35,7 @@ public class Quadrant : MonoBehaviour
 
     private void ChangeCurrentVariant()
     {
-        int newIndex = -1;
+        int newIndex;
 
         do
         {
@@ -64,9 +64,9 @@ public class Quadrant : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
-        BoxCollider boxCollider = GetComponent<BoxCollider>();
-        Gizmos.DrawWireCube(transform.position, boxCollider.size);
-    }
+        //BoxCollider boxCollider = GetComponent<BoxCollider>();
+        //Gizmos.DrawWireCube(transform.position, boxCollider.size);
+    }*/
 }
