@@ -76,6 +76,16 @@ public class LevelGameManager : MonoBehaviour
     public void KeyPickedUp()
     {
         _numberOfKeys++;
+
+        float extraTime = 5f;
+        if (_gamePlayingTimer + extraTime > _gamePlayingTimerMax)
+        {
+            _gamePlayingTimer = _gamePlayingTimerMax;
+        }
+        else
+        {
+            _gamePlayingTimer += 5f;
+        }
     }
 
     public int GetNumberOfKeys() => _numberOfKeys;
