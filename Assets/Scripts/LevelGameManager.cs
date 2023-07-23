@@ -57,6 +57,7 @@ public class LevelGameManager : MonoBehaviour
                 {
                     _state = State.GamePlaying;
                     _gamePlayingTimer = _gamePlayingTimerMax;
+                    MusicManager.Instance.PlayMusic();
                     OnStateChanged?.Invoke();
                 }
                 break;
@@ -65,10 +66,6 @@ public class LevelGameManager : MonoBehaviour
                 if (_gamePlayingTimer < 0f)
                 {
                     _state = State.GameOver;
-
-                    float timeToLoad = 5f;
-                    DOVirtual.DelayedCall(timeToLoad, () => Loader.Load(Loader.Scene.MainMenuScene));
-
                     OnStateChanged?.Invoke();
                 }
                 break;

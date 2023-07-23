@@ -23,6 +23,11 @@ public class GameOverUI : MonoBehaviour
 
             _pickedUpKeysText.text = LevelGameManager.Instance.GetNumberOfKeys().ToString();
 
+            MusicManager.Instance.StopMusic();
+            SoundManager.Instance.PlayGameOverSound();
+
+            float timeToLoad = 5f;
+            DOVirtual.DelayedCall(timeToLoad, () => Loader.Load(Loader.Scene.MainMenuScene));
         }
         else
         {

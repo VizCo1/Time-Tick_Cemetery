@@ -5,10 +5,9 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class AudioClipsSO : ScriptableObject
 {
+    public AudioClip[] dashing;
+    public AudioClip[] initialCountdown;
     public AudioClip[] keyPickedUp;
-    public AudioClip[] dash;
-    public AudioClip[] footstep;
-    public AudioClip[] gameover;
-    public AudioClip[] clock;
-    public AudioClip[] countdown;
+    public AudioClip gameover;
+    public AudioClip clock;
 }

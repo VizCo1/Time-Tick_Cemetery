@@ -12,3 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925c3abd70268ea4e99a833668ea7153, type: 3}
   m_Name: AudioClipsSO
   m_EditorClassIdentifier: 
+  dashing:
+  - {fileID: 8300000, guid: 4db4bee6bded50d40a206757c78123ef, type: 3}
+  - {fileID: 8300000, guid: 312cc06ef8736ba4b9e884bea7c3e044, type: 3}
+  - {fileID: 8300000, guid: 5507c04b6204b664f9f95b16c227fbce, type: 3}
+  - {fileID: 8300000, guid: f5cb75d88422c9347ac37cd6ed4eb0b0, type: 3}
+  - {fileID: 8300000, guid: 196178b02f6874e48b7116e78aa894f3, type: 3}
+  initialCountdown:
+  - {fileID: 8300000, guid: e801dc691d51cae4da523e6febf3e444, type: 3}
+  - {fileID: 8300000, guid: 67c62e3decc0d8b44aa7d5cc51dad57d, type: 3}
+  - {fileID: 8300000, guid: d65a7b77b75d87d4eaf49bd101fa339f, type: 3}
+  - {fileID: 8300000, guid: f94dcd0982744ab4680a730fb6e55c6d, type: 3}
+  - {fileID: 8300000, guid: 7d44ec3b94af4fc43bd8108803afd26a, type: 3}
+  keyPickedUp:
+  - {fileID: 8300000, guid: 11e8d24451333b74790c23ca6a6ba0f4, type: 3}
+  - {fileID: 8300000, guid: 3549e8017b2c87a41b9a6e7b6a26f724, type: 3}
+  gameover: {fileID: 8300000, guid: 26fcdd4513d6464469898aeee83f9bd6, type: 3}
+  clock: {fileID: 8300000, guid: 68a11bad2b43df646be962dc81523c79, type: 3}

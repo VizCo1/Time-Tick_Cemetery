@@ -23,6 +23,8 @@ public class GameStartCountdownUI : MonoBehaviour
     private void Start()
     {
         LevelGameManager.Instance.OnStateChanged += LevelGameManager_OnStateChanged;
+
+        Hide();
     }
 
     private void LevelGameManager_OnStateChanged()
@@ -44,10 +46,9 @@ public class GameStartCountdownUI : MonoBehaviour
 
         if (_previousCountdownNumber != countdownNumber)
         { 
-            Debug.Log("Triggering number animation");
             _previousCountdownNumber = countdownNumber;
             _animator.SetTrigger(NUMBER_POPUP);
-            //SoundManager.Instance.PlayCountdownSound();
+            SoundManager.Instance.PlayCountdownSound();
         }
     }
 
