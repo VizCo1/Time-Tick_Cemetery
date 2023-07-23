@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FogMaterialMainMenu
+  m_Name: FogMaterialDashTrail
   m_Shader: {fileID: -6465566751694194690, guid: c01c22f47464870489a3d82b5586df75,
     type: 3}
   m_Parent: {fileID: 0}
@@ -43,15 +43,15 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 1
-    - _FogSize: 3
-    - _FogSize2: 5
+    - _FogSize: 1
+    - _FogSize2: 3
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 0.38981843, g: 0.47943425, b: 0.7075472, a: 0}
-    - _Color2: {r: 1, g: 0.5981132, b: 0.98942405, a: 0.16470589}
-    - _FogSpeed: {r: -0.5, g: 0, b: 0, a: 0}
-    - _FogSpeed2: {r: 0.5, g: -0.5, b: 0, a: 0}
+    - _Color: {r: 0.4522606, g: 0.49371833, b: 0.6037736, a: 0}
+    - _Color2: {r: 1, g: 0.57924527, b: 0.9881477, a: 0.16470589}
+    - _FogSpeed: {r: 2, g: 0, b: 0, a: 0}
+    - _FogSpeed2: {r: 2, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7921590078759139824
 MonoBehaviour:
