@@ -13,12 +13,18 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClipsSO _audioClipsSO;
 
     private float _volume = 1f;
+    private AudioSource _clockAudioSource;
 
     private void Awake()
     {
         Instance = this;
 
-        //_volume = PlayerPrefs.GetFloat(PLAYER_PREFS_SOUND_EFFECTS_VOLUME, 1f);
+        _clockAudioSource = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        _clockAudioSource.clip = _audioClipsSO.clock;
     }
 
     private void PlaySound(AudioClip[] audioClipArray, Vector3 position, float volume = 1f)
@@ -53,7 +59,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayClockSound()
     {
-        PlaySound(_audioClipsSO.clock, Vector3.zero);
+        _clockAudioSource.Play();
     }
 
     /*public void ChangeVolume()

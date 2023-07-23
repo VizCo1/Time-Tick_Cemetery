@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class LoaderCallback : MonoBehaviour
 {
-    private bool _isFirstUpdate = true;
+
+    public static LoaderCallback Instance { get; private set; }
+
+    private bool _canLoadScene = false;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Update()
     {
-        if (_isFirstUpdate)
+        if (_canLoadScene)
         {
-            _isFirstUpdate = false;
+            _canLoadScene = false;
 
             Loader.LoaderCallback();
         }   
+    }
+
+    public void CanLoadScene()
+    {
+        _canLoadScene = true;
     }
 }
