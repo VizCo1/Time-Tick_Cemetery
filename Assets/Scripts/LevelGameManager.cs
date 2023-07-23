@@ -20,6 +20,11 @@ public class LevelGameManager : MonoBehaviour
         GameOver,
     }
 
+    [Header("Level configuration")]
+
+    [SerializeField] private float _extraTime = 5f;
+    [SerializeField] private float _minExtraTime = 0.5f;
+    [SerializeField] private float _decreaseExtraTime = 0.5f;
     [SerializeField] private float _gamePlayingTimerMax = 30f;
 
     private State _state;
@@ -61,7 +66,7 @@ public class LevelGameManager : MonoBehaviour
                 {
                     _state = State.GameOver;
 
-                    float timeToLoad = 3f;
+                    float timeToLoad = 5f;
                     DOVirtual.DelayedCall(timeToLoad, () => Loader.Load(Loader.Scene.MainMenuScene));
 
                     OnStateChanged?.Invoke();
@@ -77,20 +82,27 @@ public class LevelGameManager : MonoBehaviour
     {
         _numberOfKeys++;
 
-        float extraTime = 5f;
-        if (_gamePlayingTimer + extraTime > _gamePlayingTimerMax)
+        if (_numberOfKeys % 5 == 0)
+        {
+            if (_extraTime >= _minExtraTime)
+            {
+                _extraTime -= _decreaseExtraTime;
+            }
+        }
+
+        if (_gamePlayingTimer + _extraTime > _gamePlayingTimerMax)
         {
             _gamePlayingTimer = _gamePlayingTimerMax;
         }
         else
         {
-            _gamePlayingTimer += 5f;
+            _gamePlayingTimer += _extraTime;
         }
     }
 
     public int GetNumberOfKeys() => _numberOfKeys;
 
-    public float GetGamePlayingTimerNormalized() => 1 - (_gamePlayingTimer / _gamePlayingTimerMax);
+    public float GetGamePlayingTimerNormalized() => _gamePlayingTimer / _gamePlayingTimerMax;
 
     public bool IsGamePlaying() => _state == State.GamePlaying;
 

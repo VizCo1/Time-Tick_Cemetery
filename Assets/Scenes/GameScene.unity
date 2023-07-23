@@ -3027,6 +3027,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f10eb01ffcb12428f3d34ef260ffcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _extraTime: 5
+  _minExtraTime: 1.5
+  _decreaseExtraTime: 0.5
   _gamePlayingTimerMax: 30
 --- !u!4 &172947127
 Transform:
@@ -21281,7 +21284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 10
-  _movementSpeed: 5
+  _movementSpeed: 4
   _maxMovementSpeed: 5
 --- !u!114 &1068322814
 MonoBehaviour:
