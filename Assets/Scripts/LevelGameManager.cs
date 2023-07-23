@@ -1,12 +1,16 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.CullingGroup;
 
 public class LevelGameManager : MonoBehaviour
 {
     public static LevelGameManager Instance { get; private set; }
+
+    public event Action OnStateChanged;
 
     private enum State
     {
@@ -16,15 +20,18 @@ public class LevelGameManager : MonoBehaviour
         GameOver,
     }
 
+    [SerializeField] private float _gamePlayingTimerMax = 30f;
+
     private State _state;
-    private float _gamePlayingToStartTimerMax = 30f;
-    private float _gamePlayingToStartTimer;
+    private float _waitingToStartTimer = 1f;
+    private float _countdownToStartTimer = 3f;
+    private float _gamePlayingTimer;
+    private int _numberOfKeys;
 
     private void Awake()
     {
         Instance = this;
-        _gamePlayingToStartTimer = _gamePlayingToStartTimerMax;
-        _state = State.GamePlaying;
+        _state = State.WaitingToStart;
     }
 
     private void Update()
@@ -32,19 +39,56 @@ public class LevelGameManager : MonoBehaviour
         switch (_state)
         {
             case State.WaitingToStart:
+                _waitingToStartTimer -= Time.deltaTime;
+                if (_waitingToStartTimer < 0f)
+                {
+                    _state = State.CountdownToStart;
+                    OnStateChanged?.Invoke();
+                }
+                break;
+            case State.CountdownToStart:
+                _countdownToStartTimer -= Time.deltaTime;
+                if (_countdownToStartTimer < 0f)
+                {
+                    _state = State.GamePlaying;
+                    _gamePlayingTimer = _gamePlayingTimerMax;
+                    OnStateChanged?.Invoke();
+                }
                 break;
             case State.GamePlaying:
-                _gamePlayingToStartTimer -= Time.deltaTime;
-                if (_gamePlayingToStartTimer < 0f)
+                _gamePlayingTimer -= Time.deltaTime;
+                if (_gamePlayingTimer < 0f)
                 {
                     _state = State.GameOver;
+
+                    float timeToLoad = 3f;
+                    DOVirtual.DelayedCall(timeToLoad, () => Loader.Load(Loader.Scene.MainMenuScene));
+
+                    OnStateChanged?.Invoke();
                 }
                 break;
             case State.GameOver:
                 break;
+            
         }
     }
 
-    public float GetGamePlayingTimerNormalized() => 1 - (_gamePlayingToStartTimer / _gamePlayingToStartTimerMax);
+    public void KeyPickedUp()
+    {
+        _numberOfKeys++;
+    }
 
+    public int GetNumberOfKeys() => _numberOfKeys;
+
+    public float GetGamePlayingTimerNormalized() => 1 - (_gamePlayingTimer / _gamePlayingTimerMax);
+
+    public bool IsGamePlaying() => _state == State.GamePlaying;
+
+    public bool IsGameOver() => _state == State.GameOver;
+
+    public bool IsCountdownToStartActive() => _state == State.CountdownToStart;
+
+    public float GetCountdownToStartTimer() => _countdownToStartTimer;
+
+    
 }

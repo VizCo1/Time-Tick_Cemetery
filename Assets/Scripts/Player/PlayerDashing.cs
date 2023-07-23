@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using static UnityEngine.ParticleSystem;
 
 public class PlayerDashing : MonoBehaviour
 {
 
     [SerializeField] private float _dashingPower = 24f;
+    [SerializeField] private TrailRenderer _trailRenderer;
+    [SerializeField] private ParticleSystem _particles;
 
     private PlayerMovement _playerMovement;
     private bool _canDash = false;
@@ -25,6 +28,9 @@ public class PlayerDashing : MonoBehaviour
 
     private void Update()
     {
+        if (!LevelGameManager.Instance.IsGamePlaying())
+            return;
+
         if (Input.GetKeyDown(KeyCode.LeftShift) && _canDash && !_isDashing)
         {
             Dash();
@@ -77,17 +83,18 @@ public class PlayerDashing : MonoBehaviour
 
     private void StartingResetDash()
     {
+        _particles.Play();
         _canDash = false;
         _isDashing = true;
         _capsuleCollider.isTrigger = true;
+        _trailRenderer.emitting = true;
         _playerMovement.SetIsDashing(_isDashing);
     }
 
     private void EndingResetDash()
     {
         _canDash = false;
-        //_fencheHole = null;
-
+        _trailRenderer.emitting = false;
         _isDashing = false;
         _capsuleCollider.isTrigger = false;
         _rigidbody.velocity = Vector3.zero;

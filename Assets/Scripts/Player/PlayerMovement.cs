@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector2 _inputVector = Vector2.zero;
     private bool _isDashing = false;
-    private bool _isPressingMovementKey = false;
 
     private void Awake()
     {
@@ -22,36 +21,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!_isPressingMovementKey)
-        {
-            _inputVector = GetNormalizedInputVector();
-        }
-        //_isPressingMovementKey = PressingMovementKey();
-    }
+        if (!LevelGameManager.Instance.IsGamePlaying())
+            return;
 
-    private bool PressingMovementKey()
-    {
-        bool isPressing = false;
-
-        if (Input.GetKey(KeyCode.W)) 
-            isPressing = true;
-        else if (Input.GetKey(KeyCode.S))
-            isPressing = true;
-        else if (Input.GetKey(KeyCode.A))
-            isPressing = true;
-        else if (Input.GetKey(KeyCode.D))
-            isPressing = true;
-
-        if (Input.GetKeyUp(KeyCode.W))
-            isPressing = false;
-        else if (Input.GetKeyUp(KeyCode.S))
-            isPressing = false;
-        else if (Input.GetKeyUp(KeyCode.A))
-            isPressing = false;
-        else if (Input.GetKeyUp(KeyCode.D))
-            isPressing = false;
-
-        return isPressing;
+        _inputVector = GetNormalizedInputVector();
     }
 
     private void FixedUpdate()
@@ -64,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement()
     {
-        Vector3 moveDir = new Vector3(_inputVector.x, 0f, _inputVector.y) * _movementSpeed * Time.deltaTime;
+        Vector3 moveDir = _movementSpeed * Time.deltaTime * new Vector3(_inputVector.x, 0f, _inputVector.y);
         _rigidbody.MovePosition(transform.position + moveDir);
 
         if (_inputVector != Vector2.zero) 

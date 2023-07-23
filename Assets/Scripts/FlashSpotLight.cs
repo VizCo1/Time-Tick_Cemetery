@@ -24,4 +24,9 @@ public class FlashSpotLight : MonoBehaviour
         DOVirtual.Float(_minInnerSpotAngle, _maxInnerSpotAngle, _innerSpotAngleTweenDuration, (float value) => _light.innerSpotAngle = value)
             .SetLoops(-1, LoopType.Yoyo);
     }
+
+    private void OnDestroy()
+    {
+        DOTween.Clear();
+    }
 }
