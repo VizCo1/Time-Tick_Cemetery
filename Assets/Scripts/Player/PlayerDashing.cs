@@ -26,20 +26,21 @@ public class PlayerDashing : MonoBehaviour
         _capsuleCollider = GetComponent<CapsuleCollider>();
     }
 
+    private void Start()
+    {
+        GameInput.Instance.OnDashAction += GameInput_OnDashAction; 
+    }
+
+    private void GameInput_OnDashAction(object sender, EventArgs e)
+    {
+        if (_canDash && !_isDashing)
+            PlayDashSequence();
+    }
+
     private void Update()
     {
         if (!LevelGameManager.Instance.IsGamePlaying())
             return;
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && _canDash && !_isDashing)
-        {
-            Dash();
-        }
-    }
-
-    private void Dash()
-    {
-        PlayDashSequence();
     }
 
     private void PlayDashSequence()

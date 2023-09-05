@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }        
 
-        _inputVector = GetNormalizedInputVector();
+        _inputVector = GameInput.Instance.GetNormalizedInputVector();
     }
 
     private void FixedUpdate()
@@ -50,33 +50,6 @@ public class PlayerMovement : MonoBehaviour
 
             _rigidbody.rotation = Quaternion.Lerp(_rigidbody.rotation, rotation, Time.deltaTime * _rotationSpeed);
         }
-    }
-
-    private Vector2 GetNormalizedInputVector()
-    {
-        Vector2 inputVector = new Vector2(0, 0);
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            inputVector.y += +1;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            inputVector.y += -1;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            inputVector.x += -1;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            inputVector.x += +1;
-        }
-
-        return inputVector.normalized;
     }
 
     public void SetIsDashing(bool isDashing) => _isDashing = isDashing;
