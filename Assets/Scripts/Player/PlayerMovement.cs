@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _inputVector = Vector2.zero;
             return;
-        }        
+        }    
 
         _inputVector = GameInput.Instance.GetNormalizedInputVector();
     }

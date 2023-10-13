@@ -26,10 +26,10 @@ public class LevelGameManager : MonoBehaviour
     [SerializeField] private float _minExtraTime = 0.5f;
     [SerializeField] private float _decreaseExtraTime = 0.5f;
     [SerializeField] private float _gamePlayingTimerMax = 30f;
-
-    private State _state;
-    private float _waitingToStartTimer = 1f;
+    
+    private State _state = State.WaitingToStart;
     private float _countdownToStartTimer = 3f;
+    private float _waitingToStartTimer = 1f;
     private float _gamePlayingTimer;
     private int _numberOfKeys;
 

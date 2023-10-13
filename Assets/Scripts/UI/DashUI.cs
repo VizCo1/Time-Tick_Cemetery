@@ -23,6 +23,12 @@ public class DashUI : MonoBehaviour
         Hide();
     }
 
+    private void OnDestroy()
+    {
+        InputDeviceChangeHandler.Instance.OnGamepad -= InputDeviceChangeHandler_OnGamepad;
+        InputDeviceChangeHandler.Instance.OnKeyboard -= InputDeviceChangeHandler_OnKeyboard;
+    }
+
     private void InputDeviceChangeHandler_OnKeyboard(object sender, System.EventArgs e)
     {
         _keyboardText.SetActive(true);

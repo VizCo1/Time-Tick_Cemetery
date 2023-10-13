@@ -28,7 +28,7 @@ public class PlayerDashing : MonoBehaviour
 
     private void Start()
     {
-        GameInput.Instance.OnDashAction += GameInput_OnDashAction; 
+        GameInput.Instance.OnDashPerformed += GameInput_OnDashAction; 
     }
 
     private void GameInput_OnDashAction(object sender, EventArgs e)
