@@ -36,12 +36,12 @@ public class GameInput : MonoBehaviour
 
     private void Move_Canceled(InputAction.CallbackContext obj)
     {
-        OnMoveCanceled.Invoke(this, EventArgs.Empty);
+        OnMoveCanceled?.Invoke(this, EventArgs.Empty);
     }
 
     private void Move_Performed(InputAction.CallbackContext obj)
     {
-        OnMovePerformed.Invoke(this, EventArgs.Empty);
+        OnMovePerformed?.Invoke(this, EventArgs.Empty);
     }
 
     private void Dash_Performed(InputAction.CallbackContext obj)

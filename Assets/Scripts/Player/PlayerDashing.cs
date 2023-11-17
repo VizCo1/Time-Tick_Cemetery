@@ -39,8 +39,8 @@ public class PlayerDashing : MonoBehaviour
 
     private void Update()
     {
-        if (!LevelGameManager.Instance.IsGamePlaying())
-            return;
+        //if (!LevelGameManager.Instance.IsGamePlaying())
+        //    return;
     }
 
     private void PlayDashSequence()

@@ -6,6 +6,6 @@ public class MaskObject : MonoBehaviour
 {
     private void Start()
     {
-        GetComponent<MeshRenderer>().material.renderQueue = 3002;
+        GetComponent<MeshRenderer>().sharedMaterial.renderQueue = 3002;
     }
 }
