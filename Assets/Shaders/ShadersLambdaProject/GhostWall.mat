@@ -78,7 +78,7 @@ Material:
     - _ColotOutMask: {r: 0.053511556, g: 0, b: 0.48672274, a: 1}
     - _MaskColor: {r: 1.498039, g: 0.3730965, b: 0.3730965, a: 1}
     - _SpherePos: {r: -21.78075, g: 0.09996678, b: 2.2263546, a: 0}
-    - _TargetPos: {r: -20.312325, g: 0.500003, b: 11.960886, a: 0}
+    - _TargetPos: {r: -26.279259, g: 0.500003, b: -3.5049946, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4950779229533994121
 MonoBehaviour:

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4276166901204705148}
   - component: {fileID: 4023230481117591780}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallCrypt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +125,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: crypt-small-roof
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 069077e7fa7356b488ed371722a6065a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -198,6 +203,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crypt-door
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 49e2f3a51a70bb447bfe2b1ab4bb9eee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 49e2f3a51a70bb447bfe2b1ab4bb9eee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9077926073120308842, guid: 49e2f3a51a70bb447bfe2b1ab4bb9eee,
         type: 3}
@@ -283,6 +298,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: crypt-small-entrance-alternative
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f06c6edbfe96d9f40889cca17a3b6579,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -361,6 +381,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crypt-small
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8968f51139d58284896bac6653318fa9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
