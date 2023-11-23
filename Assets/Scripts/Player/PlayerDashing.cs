@@ -37,11 +37,11 @@ public class PlayerDashing : MonoBehaviour
             PlayDashSequence();
     }
 
-    private void Update()
-    {
-        //if (!LevelGameManager.Instance.IsGamePlaying())
-        //    return;
-    }
+    //private void Update()
+    //{
+    //    if (!LevelGameManager.Instance.IsGamePlaying())
+    //        return;
+    //}
 
     private void PlayDashSequence()
     {
@@ -72,6 +72,7 @@ public class PlayerDashing : MonoBehaviour
             _fencheHole = fencheHole;
             _canDash = true;
             DashUI.Instance.Show();
+            PlayerAnimations.Instance.SetCanDash(_canDash);
         }   
     }
 
@@ -81,6 +82,7 @@ public class PlayerDashing : MonoBehaviour
         {
             EndingResetDash();    
             DashUI.Instance.Hide();
+            PlayerAnimations.Instance.SetCanDash(_canDash);
         }
     }
 

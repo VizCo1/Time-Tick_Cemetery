@@ -21,11 +21,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        //if (!LevelGameManager.Instance.IsGamePlaying())
-        //{
-        //    _inputVector = Vector2.zero;
-        //    return;
-        //}    
+        if (!LevelGameManager.Instance.IsGamePlaying())
+        {
+            _inputVector = Vector2.zero;
+            return;
+        }
 
         _inputVector = GameInput.Instance.GetNormalizedInputVector();
     }

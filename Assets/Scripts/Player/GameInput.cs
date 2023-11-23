@@ -30,6 +30,8 @@ public class GameInput : MonoBehaviour
     private void OnDestroy()
     {
         _playerInputActions.Player.Dash.performed -= Dash_Performed;
+        _playerInputActions.Player.Move.performed -= Move_Performed;
+        _playerInputActions.Player.Move.canceled -= Move_Canceled;
 
         _playerInputActions.Dispose();
     }

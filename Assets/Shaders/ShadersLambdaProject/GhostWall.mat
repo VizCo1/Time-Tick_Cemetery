@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _InRangeMask:
-        m_Texture: {fileID: 2800000, guid: 58faf13c515b69b419d377326acdae20, type: 3}
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask:
@@ -33,7 +33,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutRangeMask:
-        m_Texture: {fileID: 2800000, guid: f6ddaef650a2a3d479b06f616fd466b9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 55b8bb4885911ca4b9967fc4fcd26af3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureA:
@@ -59,7 +59,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _DissolveAmount: 0
-    - _MaxDistance: 1.41
+    - _MaxDistance: 0.5
     - _MinDistance: 0
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -74,11 +74,11 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorB: {r: 0, g: 0.03897311, b: 0.13207546, a: 1}
-    - _ColorInMask: {r: 0.16775824, g: 0, b: 2.670157, a: 1}
-    - _ColotOutMask: {r: 0.053511556, g: 0, b: 0.48672274, a: 1}
+    - _ColorInMask: {r: 0.41621664, g: 0, b: 0.42352942, a: 1}
+    - _ColotOutMask: {r: 0.06095789, g: 0, b: 0.5283019, a: 1}
     - _MaskColor: {r: 1.498039, g: 0.3730965, b: 0.3730965, a: 1}
     - _SpherePos: {r: -21.78075, g: 0.09996678, b: 2.2263546, a: 0}
-    - _TargetPos: {r: -26.279259, g: 0.500003, b: -3.5049946, a: 0}
+    - _TargetPos: {r: 2.6567981, g: 0.500003, b: -5.246177, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4950779229533994121
 MonoBehaviour:

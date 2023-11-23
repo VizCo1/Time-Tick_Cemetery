@@ -1,3 +1,5 @@
+using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +8,17 @@ public class PlayerAnimations : MonoBehaviour
 {
     private const string TO_DASH = "ToDash";
     private const string TO_IDLE = "ToIdle";
-    private const string TO_MOVE = "ToMove";
-    
-    private Animator _animator;
+    private const string TO_SPRINT = "ToSprint";
+
+    private bool _canDash = false;
+
+    [SerializeField] private Animator _animator;
+
+    public static PlayerAnimations Instance;
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
+        Instance = this;
     }
 
     private void Start()
@@ -27,13 +33,13 @@ public class PlayerAnimations : MonoBehaviour
         if (!LevelGameManager.Instance.IsGamePlaying())
             return;
 
-        _animator.SetBool(TO_MOVE, false);
+        _animator.SetBool(TO_SPRINT, false);
         _animator.SetTrigger(TO_IDLE);
     }
 
     private void GameInput_OnDashPerformed(object sender, System.EventArgs e)
     {
-        if (!LevelGameManager.Instance.IsGamePlaying())
+        if (!LevelGameManager.Instance.IsGamePlaying() || !_canDash)
             return;
 
         _animator.SetTrigger(TO_DASH);
@@ -44,6 +50,11 @@ public class PlayerAnimations : MonoBehaviour
         if (!LevelGameManager.Instance.IsGamePlaying())
             return;
 
-        _animator.SetBool(TO_MOVE, true);
+        _animator.SetBool(TO_SPRINT, true);
+    }
+
+    public void SetCanDash(bool canDash)
+    {
+        _canDash = canDash;
     }
 }

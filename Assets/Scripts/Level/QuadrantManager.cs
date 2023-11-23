@@ -23,7 +23,6 @@ public class QuadrantManager : MonoBehaviour
     {
         ChangeAllVariants();
         ChangeRandomVariant();
-
     }
 
     private void ChangeAllVariants()
