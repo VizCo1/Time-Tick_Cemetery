@@ -47,7 +47,11 @@ public class PlayerDashing : MonoBehaviour
     {
         Sequence dashSequence = DOTween.Sequence();
 
+        _canDash = false;
+        PlayerAnimations.Instance.SetCanDash(false);
         float correctionTime = 0.1f;
+
+        _playerMovement.canMove = false;
 
         dashSequence
             .Append(_rigidbody.DOMove(_fencheHole.GetStartingDashPosition(transform.position), correctionTime))
@@ -56,13 +60,15 @@ public class PlayerDashing : MonoBehaviour
                 StartingResetDash();
 
                 SoundManager.Instance.PlayDashSound(transform.position, 1.2f);
-
+                
                 // Push
                 Vector3 direction = _fencheHole.transform.position - _fencheHole.GetCloserStartingPoint(transform.position);
                 _rigidbody.velocity = direction * _dashingPower;
 
                 transform.forward = direction;
-            });
+            })
+            .SetDelay(correctionTime)
+            .OnComplete(() => _playerMovement.canMove = true);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -80,9 +86,9 @@ public class PlayerDashing : MonoBehaviour
     {
         if (other.TryGetComponent(out FenceHole fencheHole))
         {
+            PlayerAnimations.Instance.SetCanDash(false);
             EndingResetDash();    
             DashUI.Instance.Hide();
-            PlayerAnimations.Instance.SetCanDash(_canDash);
         }
     }
 

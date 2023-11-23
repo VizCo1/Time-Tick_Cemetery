@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _inputVector = Vector2.zero;
     private bool _isDashing = false;
 
+    [HideInInspector] public bool canMove = true;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();

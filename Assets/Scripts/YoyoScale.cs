@@ -21,9 +21,4 @@ public class YoyoScale : MonoBehaviour
     {
         return new Vector3(value, value, value);
     }
-
-    private void OnDestroy()
-    {
-        DOTween.Clear();
-    }
 }

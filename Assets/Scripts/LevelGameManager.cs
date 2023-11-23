@@ -109,5 +109,8 @@ public class LevelGameManager : MonoBehaviour
 
     public float GetCountdownToStartTimer() => _countdownToStartTimer;
 
-    
+    private void OnDestroy()
+    {
+        DOTween.Clear();
+    }
 }
