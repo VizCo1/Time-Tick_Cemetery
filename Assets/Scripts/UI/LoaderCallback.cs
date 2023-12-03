@@ -12,6 +12,7 @@ public class LoaderCallback : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        MusicManager.Instance.StopMusic();
     }
 
     private void Update()

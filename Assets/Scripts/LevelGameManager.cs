@@ -1,10 +1,6 @@
 using DG.Tweening;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using static UnityEngine.CullingGroup;
 
 public class LevelGameManager : MonoBehaviour
 {
@@ -26,6 +22,9 @@ public class LevelGameManager : MonoBehaviour
     [SerializeField] private float _minExtraTime = 0.5f;
     [SerializeField] private float _decreaseExtraTime = 0.5f;
     [SerializeField] private float _gamePlayingTimerMax = 30f;
+
+    [Header("Level")]
+    [SerializeField] private SavingManager.Keys _levelKey;
     
     private State _state = State.WaitingToStart;
     private float _countdownToStartTimer = 3f;
@@ -57,7 +56,7 @@ public class LevelGameManager : MonoBehaviour
                 {
                     _state = State.GamePlaying;
                     _gamePlayingTimer = _gamePlayingTimerMax;
-                    MusicManager.Instance.PlayMusic();
+                    MusicManager.Instance.PlayMusic(MusicManager.Music.GameMusic);
                     OnStateChanged?.Invoke();
                 }
                 break;
@@ -66,6 +65,7 @@ public class LevelGameManager : MonoBehaviour
                 if (_gamePlayingTimer < 0f)
                 {
                     _state = State.GameOver;
+                    SavingManager.SaveRecord(_levelKey, _numberOfKeys);
                     OnStateChanged?.Invoke();
                 }
                 break;

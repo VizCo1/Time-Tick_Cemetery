@@ -4,21 +4,42 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    
+
+    public enum Music
+    {
+        MenuMusic,
+        GameMusic,
+    }
+
+    [SerializeField] private AudioClip[] _musicClips;
+
     public static MusicManager Instance { get; private set; }
 
     private AudioSource _music;
 
     private void Awake()
     {
-        Instance = this;
-        _music = GetComponent<AudioSource>();
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(this);
+            Instance = this;
+            _music = GetComponent<AudioSource>();
+            _music.Play();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-
-    public void PlayMusic()
+    public void PlayMusic(Music music)
     {
-        _music.Play();
+        if (_music.clip != _musicClips[(int) music])
+        {
+            _music.Stop();
+            _music.clip = _musicClips[(int) music];
+            _music.Play();
+        }
     }
 
     public void StopMusic()

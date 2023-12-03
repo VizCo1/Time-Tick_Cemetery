@@ -9,12 +9,18 @@ public static class Loader
     public enum Scene
     {
         MainMenuScene,
-        GameScene,
+        LevelSelectorScene,
+        Level_1,
+        Level_2,
         LoadingScene,
     }
 
     private static Scene _targetScene;
 
+    public static void SetTargetScene(Scene targetScene)
+    {
+        _targetScene = targetScene;
+    }
     public static void Load(Scene targetScene)
     {
         _targetScene = targetScene;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -15,14 +16,14 @@ public class MainMenuUI : MonoBehaviour
     [Space]
 
     [Header("Buttons")]
-    [SerializeField] private Button _playButton;
+    [SerializeField] private Button _levelSelectorButton;
     [SerializeField] private Button _quitButton;
     [SerializeField] private Transform _buttonsTransform;
     [SerializeField] private Transform _buttonsGoToTransform;
 
     private void Awake()
     {
-        _playButton.onClick.AddListener(() => Loader.Load(Loader.Scene.GameScene));
+        _levelSelectorButton.onClick.AddListener(() => SceneManager.LoadScene(Loader.Scene.LevelSelectorScene.ToString()));
 
         _quitButton.onClick.AddListener(() => Application.Quit());
     }

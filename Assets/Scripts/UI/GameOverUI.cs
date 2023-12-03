@@ -27,11 +27,12 @@ public class GameOverUI : MonoBehaviour
         {
             Show();
 
-            _pickedUpKeysText.text = LevelGameManager.Instance.GetNumberOfKeys().ToString();
+            _pickedUpKeysText.SetText(LevelGameManager.Instance.GetNumberOfKeys().ToString());
 
             MusicManager.Instance.StopMusic();
             SoundManager.Instance.PlayGameOverSound();
 
+            Loader.SetTargetScene(Loader.Scene.LevelSelectorScene);
             _loadingBarUI.StartLoadingBar();
         }
         else
