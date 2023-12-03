@@ -241,6 +241,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadingBar: {fileID: 1087062758}
+  _autoStart: 1
+  _from: 0
+  _to1: 0.5
+  _to2: 0.8
+  _duration1: 0.5
+  _duration2: 1
+  _restantDuration1: 0.5
+  _restantDuration2: 1
+  _ease1: 6
+  _ease2: 6
 --- !u!1 &841403527
 GameObject:
   m_ObjectHideFlags: 0

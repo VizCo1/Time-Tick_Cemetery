@@ -7,6 +7,7 @@ using DG.Tweening;
 public class GameOverUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _pickedUpKeysText;
+    [SerializeField] LoadingBarUI _loadingBarUI;
 
     private void Start()
     {
@@ -31,8 +32,7 @@ public class GameOverUI : MonoBehaviour
             MusicManager.Instance.StopMusic();
             SoundManager.Instance.PlayGameOverSound();
 
-            float timeToLoad = 5f;
-            DOVirtual.DelayedCall(timeToLoad, () => Loader.Load(Loader.Scene.MainMenuScene));
+            _loadingBarUI.StartLoadingBar();
         }
         else
         {
