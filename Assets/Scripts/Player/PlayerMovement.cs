@@ -10,8 +10,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _movementSpeed;
     [SerializeField] private float _maxMovementSpeed;
 
-    [SerializeField] private ParticleSystem _movementPartices;
-
     private Rigidbody _rigidbody;
     private Vector2 _inputVector = Vector2.zero;
     private bool _isDashing = false;
@@ -57,5 +55,4 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void SetIsDashing(bool isDashing) => _isDashing = isDashing;
-    public void PlayMovementParticles() => _movementPartices.Play();
 }

@@ -39,7 +39,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 6756ce1110b2ba24e9f356c415a5a73d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -154,7 +154,7 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _OutlineAlpha: 0
-    - _OutlineWidth: 0.249
+    - _OutlineWidth: 0.1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _RampOffset: 0.5
@@ -162,16 +162,16 @@ Material:
     - _RimAmount: 0.7
     - _RimOffset: 0.24
     - _RimPower: 0.6547081
-    - _RimStep: 0.279
-    - _RimStepSmooth: 0.727
+    - _RimStep: 0
+    - _RimStepSmooth: 0
     - _SecondaryTextureSize: 1
     - _SecondaryTextureSpeedFactor: 0
     - _SecondaryTextureStrength: 0
     - _ShadowBlur: 1
     - _ShadowMixMode: 0
     - _ShadowSize: 0.5
-    - _ShadowStep: 0.338
-    - _ShadowStepSmooth: 0.17
+    - _ShadowStep: 0.63
+    - _ShadowStepSmooth: 0
     - _ShadowStrength: 1
     - _SharpRimLight: 1
     - _Smoothness: 0.5
@@ -181,8 +181,8 @@ Material:
     - _SpecularHighlights: 1
     - _SpecularPower: 1
     - _SpecularSize: 0.4
-    - _SpecularStep: 0.214
-    - _SpecularStepSmooth: 0.195
+    - _SpecularStep: 0
+    - _SpecularStepSmooth: 0
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _StepAmount: 2
@@ -202,12 +202,12 @@ Material:
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 1, g: 0.51479363, b: 0, a: 1}
+    - _OutlineColor: {r: 0.7960785, g: 0.6431373, b: 0.5647059, a: 1}
     - _RampDark: {r: 0.34905657, g: 0.34905657, b: 0.34905657, a: 0}
     - _RampLight: {r: 1, g: 1, b: 1, a: 0}
     - _RimColor: {r: 0.6981132, g: 0.14093982, b: 0.626831, a: 1}

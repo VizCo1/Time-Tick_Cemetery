@@ -2,8 +2,7 @@
     "name": "Global",
     "rootNamespace": "",
     "references": [
-        "GUID:8087d854c1f812e4b9a74437dfc524e0",
-        "GUID:c9f78693bc9a85c43bec47d02cd4f6d8"
+        "GUID:8087d854c1f812e4b9a74437dfc524e0"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

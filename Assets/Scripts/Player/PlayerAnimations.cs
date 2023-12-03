@@ -43,6 +43,7 @@ public class PlayerAnimations : MonoBehaviour
             return;
 
         _animator.SetTrigger(TO_DASH);
+        _canDash = false;
     }
 
     private void GameInput_OnMovePerformed(object sender, System.EventArgs e)

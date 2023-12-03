@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AnimationsEvents : MonoBehaviour
 {
-    [Header("Needs an object with an AnimationEventsLauncher script")]
+    [Header("Needs an object with AnimationEventsLauncher")]
 
     [SerializeField] private CustomEventInAnimation[] _customEventsInAnimation;
     

@@ -9,8 +9,6 @@ public class PlayerDashing : MonoBehaviour
 {
 
     [SerializeField] private float _dashingPower = 24f;
-    [SerializeField] private TrailRenderer _trailRenderer;
-    [SerializeField] private ParticleSystem _particles;
 
     private PlayerMovement _playerMovement;
     private bool _canDash = false;
@@ -37,18 +35,11 @@ public class PlayerDashing : MonoBehaviour
             PlayDashSequence();
     }
 
-    //private void Update()
-    //{
-    //    if (!LevelGameManager.Instance.IsGamePlaying())
-    //        return;
-    //}
-
     private void PlayDashSequence()
     {
         Sequence dashSequence = DOTween.Sequence();
 
         _canDash = false;
-        PlayerAnimations.Instance.SetCanDash(false);
         float correctionTime = 0.1f;
 
         _playerMovement.canMove = false;
@@ -78,7 +69,7 @@ public class PlayerDashing : MonoBehaviour
             _fencheHole = fencheHole;
             _canDash = true;
             DashUI.Instance.Show();
-            PlayerAnimations.Instance.SetCanDash(_canDash);
+            PlayerAnimations.Instance.SetCanDash(true);
         }   
     }
 
@@ -94,18 +85,18 @@ public class PlayerDashing : MonoBehaviour
 
     private void StartingResetDash()
     {
-        _particles.Play();
+        PlayerEffects.Instance.PlayDashParticles();
         _canDash = false;
         _isDashing = true;
         _capsuleCollider.isTrigger = true;
-        _trailRenderer.emitting = true;
+        PlayerEffects.Instance.SetDashTrail(true);
         _playerMovement.SetIsDashing(_isDashing);
     }
 
     private void EndingResetDash()
     {
         _canDash = false;
-        _trailRenderer.emitting = false;
+        PlayerEffects.Instance.SetDashTrail(false);
         _isDashing = false;
         _capsuleCollider.isTrigger = false;
         _rigidbody.velocity = Vector3.zero;
