@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CustomAnimationEvents : MonoBehaviour
+public class AnimationEventsLauncher : MonoBehaviour
 {
-    [Header("Needs an object with a PlayerAnimationsEvents component attached")]
+    [Header("Needs an object with an AnimationsEvents script")]
 
     [SerializeField] private UnityEvent[] _unityEvents;
 
@@ -14,5 +14,4 @@ public class CustomAnimationEvents : MonoBehaviour
     {
         _unityEvents[i]?.Invoke();
     }
-
 }

@@ -21596,7 +21596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe68758be2069c4f9411e3d497ce232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 1320644792}
   _customEventsInAnimation:
   - time: 0.15
     eventIndex: 0

@@ -10,8 +10,6 @@ public class QuadrantManager : MonoBehaviour
     [SerializeField] private Quadrant[] _quadrantArray;
     [SerializeField] private GameObject _key;
 
-    //public event Action OnKeyPickedUp;
-
     public static QuadrantManager Instance { get; private set; }
 
     private void Awake()
