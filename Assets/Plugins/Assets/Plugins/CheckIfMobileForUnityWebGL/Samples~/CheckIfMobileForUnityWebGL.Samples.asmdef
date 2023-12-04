@@ -1,9 +1,7 @@
 {
-    "name": "Camera",
+    "name": "CheckIfMobileForUnityWebGL.Samples",
     "rootNamespace": "",
-    "references": [
-        "GUID:44dfc4f3544d04443be8fb0cd3e88b14"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

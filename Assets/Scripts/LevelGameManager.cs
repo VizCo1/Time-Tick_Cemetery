@@ -65,7 +65,10 @@ public class LevelGameManager : MonoBehaviour
                 if (_gamePlayingTimer < 0f)
                 {
                     _state = State.GameOver;
-                    SavingManager.SaveRecord(_levelKey, _numberOfKeys);
+                    if (_numberOfKeys > SavingManager.GetRecord(_levelKey))
+                    {
+                        SavingManager.SaveRecord(_levelKey, _numberOfKeys);
+                    }
                     OnStateChanged?.Invoke();
                 }
                 break;

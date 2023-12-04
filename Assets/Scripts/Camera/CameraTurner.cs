@@ -18,6 +18,14 @@ public class CameraTurner : MonoBehaviour
         _initialEulerRotation = transform.eulerAngles;
     }
 
+    private void Start()
+    {
+        if (SettingsManager.CameraRotates == 0)
+        {
+            this.enabled = false;
+        }
+    }
+
     private void Update()
     {
         float turnPercentage = Mathf.InverseLerp(0, _maxDistance, Mathf.Abs(_playerTransform.position.x));

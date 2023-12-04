@@ -18,8 +18,6 @@ public class GameInputManager : MonoBehaviour
 
     private void Awake()
     {
-        SettingsManager.InitSettings();
-
         if (SettingsManager.IsMobile == 1)
         {
             _joystick.OnTouchDown += Move_Performed_Mobile;

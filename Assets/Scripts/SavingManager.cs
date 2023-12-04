@@ -25,15 +25,21 @@ public static class SavingManager
         return PlayerPrefs.GetInt(key.ToString(), 0);
     }
 
-    //public static void SaveSetting(SettingsKeys key, int status)
-    //{
-    //    PlayerPrefs.SetInt(key.ToString(), status);
-    //}
+    public static void SaveSetting(SettingsKeys key, int status)
+    {
+        PlayerPrefs.SetInt(key.ToString(), status);
+    }
 
-    //public static int GetSetting(SettingsKeys key)
-    //{
-    //    return PlayerPrefs.GetInt(key.ToString());
-    //}
+    public static void SaveSetting(SettingsKeys key, bool status)
+    {
+        int value = status ? 1 : 0;
+        PlayerPrefs.SetInt(key.ToString(), value);
+    }
+
+    public static int GetSetting(SettingsKeys key)
+    {
+        return PlayerPrefs.GetInt(key.ToString());
+    }
 
     public static void ResetRecords()
     {

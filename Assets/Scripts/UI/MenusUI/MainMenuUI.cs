@@ -25,7 +25,7 @@ public class MainMenuUI : MonoBehaviour
     private void Awake()
     {
         _levelSelectorButton.onClick.AddListener(() => SceneManager.LoadScene(Loader.Scene.LevelSelectorScene.ToString()));
-        _settingsButton.onClick.AddListener(() => SceneManager.LoadScene(Loader.Scene.OptionsScene.ToString()));
+        _settingsButton.onClick.AddListener(() => SceneManager.LoadScene(Loader.Scene.SettingsScene.ToString()));
 #if !UNITY_WEBGL
         _quitButton.onClick.AddListener(() => Application.Quit());
 #else
@@ -44,5 +44,4 @@ public class MainMenuUI : MonoBehaviour
             .Append(_title2Transform.DOMoveY(_title2GoToTransform.position.y, 0.5f).SetEase(Ease.InOutSine))
             .Append(_buttonsTransform.DOMoveY(_buttonsGoToTransform.position.y, 0.35f).SetEase(Ease.InOutSine));
     }
-
 }

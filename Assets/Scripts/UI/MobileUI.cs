@@ -22,7 +22,6 @@ public class MobileUI : MonoBehaviour
         {
             LevelGameManager.Instance.OnStateChanged += LevelGameManager_OnStateChanged;
             _dashButton.onClick.AddListener(() => GameInputManager.Instance.Dash_Performed_Mobile());
-            Debug.Log("IsMobile!");
         }
 
         Hide();

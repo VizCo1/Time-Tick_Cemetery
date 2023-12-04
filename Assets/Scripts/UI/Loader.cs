@@ -13,7 +13,7 @@ public static class Loader
         Level_1,
         Level_2,
         LoadingScene,
-        OptionsScene,
+        SettingsScene,
     }
 
     private static Scene _targetScene;

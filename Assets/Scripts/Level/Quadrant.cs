@@ -12,11 +12,6 @@ public class Quadrant : MonoBehaviour
     private int _currentVariantIndex = 0;
     private bool _canChange = true;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) { TryChangeCurrentVariant(); }
-    }
-
     public bool TryChangeCurrentVariant()
     {
         if (_canChange)

@@ -3954,7 +3954,7 @@ MonoBehaviour:
   _extraTime: 7
   _minExtraTime: 2
   _decreaseExtraTime: 0.5
-  _gamePlayingTimerMax: 100000
+  _gamePlayingTimerMax: 35
   _levelKey: 0
 --- !u!4 &172947127
 Transform:
