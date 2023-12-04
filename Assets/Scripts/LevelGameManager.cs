@@ -10,6 +10,7 @@ public class LevelGameManager : MonoBehaviour
 
     private enum State
     {
+        StartingAnimation,
         WaitingToStart,
         CountdownToStart,
         GamePlaying,
@@ -35,13 +36,20 @@ public class LevelGameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        _state = State.WaitingToStart;
+        _state = State.StartingAnimation;
     }
 
     private void Update()
     {
         switch (_state)
         {
+            case State.StartingAnimation:
+                if (StartingLevelAnimation.Instance.AnimationHasFinished)
+                {
+                    _state = State.WaitingToStart;
+                    OnStateChanged?.Invoke();
+                }
+                break;
             case State.WaitingToStart:
                 _waitingToStartTimer -= Time.deltaTime;
                 if (_waitingToStartTimer < 0f)
@@ -103,6 +111,8 @@ public class LevelGameManager : MonoBehaviour
     public int GetNumberOfKeys() => _numberOfKeys;
 
     public float GetGamePlayingTimerNormalized() => _gamePlayingTimer / _gamePlayingTimerMax;
+
+    public bool IsWaitingToStart() => _state == State.WaitingToStart;
 
     public bool IsGamePlaying() => _state == State.GamePlaying;
 
