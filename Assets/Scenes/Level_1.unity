@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 165b6a6bc5c7f634baacc4e7f7d47e4e,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -8803,7 +8804,7 @@ Transform:
   m_GameObject: {fileID: 403462082}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.26, y: -0.207, z: -0.59}
+  m_LocalPosition: {x: 0, y: 0.2, z: -0.5}
   m_LocalScale: {x: 1.0860868, y: 1.0860868, z: 1.0860868}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8843,7 +8844,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.54509807, g: 0.36862746, b: 0.59607846, a: 1}
   m_Intensity: 10.47
   m_Range: 10
   m_SpotAngle: 179
@@ -52145,6 +52146,16 @@ PrefabInstance:
       propertyPath: managedReferences[3699499778632318983].m_ImpulseDefinition.m_TimeEnvelope.m_AttackShape.m_Curve.Array.data[1].weightedMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3278260355740595829, guid: 2f251b719046bd44a8f1dcf4fdf2aacb,
+        type: 3}
+      propertyPath: _maxInnerSpotAngle
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278260355740595829, guid: 2f251b719046bd44a8f1dcf4fdf2aacb,
+        type: 3}
+      propertyPath: _minInnerSpotAngle
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 3618671525199688346, guid: 2f251b719046bd44a8f1dcf4fdf2aacb,
         type: 3}
       propertyPath: m_Name
@@ -52199,6 +52210,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870716842837560158, guid: 2f251b719046bd44a8f1dcf4fdf2aacb,
+        type: 3}
+      propertyPath: m_Range
+      value: 4.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870716842837560158, guid: 2f251b719046bd44a8f1dcf4fdf2aacb,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870716842837560158, guid: 2f251b719046bd44a8f1dcf4fdf2aacb,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870716842837560158, guid: 2f251b719046bd44a8f1dcf4fdf2aacb,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 38.662018
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
