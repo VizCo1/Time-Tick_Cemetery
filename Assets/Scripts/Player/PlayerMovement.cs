@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
-
+    [Header("Movement settings")]
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _movementSpeed;
     [SerializeField] private float _maxMovementSpeed;
@@ -29,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        _inputVector = GameInput.Instance.GetNormalizedInputVector();
+        _inputVector = GameInputManager.Instance.GetNormalizedInputVector();
     }
 
     private void FixedUpdate()

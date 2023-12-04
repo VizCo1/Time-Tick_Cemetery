@@ -16,6 +16,7 @@ public class InputDeviceChangeHandler : MonoBehaviour
 
     public event EventHandler OnKeyboard;
     public event EventHandler OnGamepad;
+    //public event EventHandler OnMobile;
 
     private void Awake()
     {
@@ -40,6 +41,9 @@ public class InputDeviceChangeHandler : MonoBehaviour
                 case GAMEPAD:
                     OnGamepad?.Invoke(this, EventArgs.Empty);
                     break;
+                //default:
+                //    OnMobile?.Invoke(this, EventArgs.Empty);
+                //    break;
             }
         }
 

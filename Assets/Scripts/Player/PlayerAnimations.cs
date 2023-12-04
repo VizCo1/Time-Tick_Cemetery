@@ -23,9 +23,9 @@ public class PlayerAnimations : MonoBehaviour
 
     private void Start()
     {
-        GameInput.Instance.OnMovePerformed += GameInput_OnMovePerformed;
-        GameInput.Instance.OnDashPerformed += GameInput_OnDashPerformed;
-        GameInput.Instance.OnMoveCanceled += Instance_OnMoveCanceled;
+        GameInputManager.Instance.OnMovePerformed += GameInput_OnMovePerformed;
+        GameInputManager.Instance.OnDashPerformed += GameInput_OnDashPerformed;
+        GameInputManager.Instance.OnMoveCanceled += Instance_OnMoveCanceled;
     }
 
     private void Instance_OnMoveCanceled(object sender, System.EventArgs e)

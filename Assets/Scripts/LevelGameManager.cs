@@ -24,7 +24,7 @@ public class LevelGameManager : MonoBehaviour
     [SerializeField] private float _gamePlayingTimerMax = 30f;
 
     [Header("Level")]
-    [SerializeField] private SavingManager.Keys _levelKey;
+    [SerializeField] private SavingManager.RecordKeys _levelKey;
     
     private State _state = State.WaitingToStart;
     private float _countdownToStartTimer = 3f;

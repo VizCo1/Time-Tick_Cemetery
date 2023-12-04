@@ -26,7 +26,7 @@ public class PlayerDashing : MonoBehaviour
 
     private void Start()
     {
-        GameInput.Instance.OnDashPerformed += GameInput_OnDashAction; 
+        GameInputManager.Instance.OnDashPerformed += GameInput_OnDashAction; 
     }
 
     private void GameInput_OnDashAction(object sender, EventArgs e)
@@ -68,7 +68,14 @@ public class PlayerDashing : MonoBehaviour
         {
             _fencheHole = fencheHole;
             _canDash = true;
-            DashUI.Instance.Show();
+            if (SettingsManager.IsMobile == 1)
+            {
+                MobileUI.Instance.SetDashButtonInteractable(true);
+            }
+            else
+            {
+                DashUI.Instance.Show();
+            }
             PlayerAnimations.Instance.SetCanDash(true);
         }   
     }
@@ -78,8 +85,15 @@ public class PlayerDashing : MonoBehaviour
         if (other.TryGetComponent(out FenceHole fencheHole))
         {
             PlayerAnimations.Instance.SetCanDash(false);
-            EndingResetDash();    
-            DashUI.Instance.Hide();
+            EndingResetDash();
+            if (SettingsManager.IsMobile == 1)
+            {
+                MobileUI.Instance.SetDashButtonInteractable(false);
+            }
+            else
+            {
+                DashUI.Instance.Hide();
+            }
         }
     }
 

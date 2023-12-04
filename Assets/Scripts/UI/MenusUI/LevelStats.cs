@@ -8,7 +8,7 @@ public class LevelStats : MonoBehaviour
 {
 
     [SerializeField] private TextMeshProUGUI _numberOfKeysText;
-    [SerializeField] private SavingManager.Keys _key;
+    [SerializeField] private SavingManager.RecordKeys _key;
 
     public int Record { get; set; } = 0;
 

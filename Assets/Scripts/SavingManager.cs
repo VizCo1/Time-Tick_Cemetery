@@ -1,30 +1,43 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static log4net.Appender.ColoredConsoleAppender;
 
 public static class SavingManager
 {
-    public enum Keys
+    public enum RecordKeys
     {
         Level1Record,
         Level2Record,
     }
 
-    public static void SaveRecord(Keys key, int record)
+    public enum SettingsKeys
+    {
+        IsMobile,
+        CameraRotates,
+    }
+
+    public static void SaveRecord(RecordKeys key, int record)
     {
         PlayerPrefs.SetInt(key.ToString(), record);
     }
 
-    public static int GetRecord(Keys key)
+    public static int GetRecord(RecordKeys key)
     {
-        return PlayerPrefs.GetInt(key.ToString());
+        return PlayerPrefs.GetInt(key.ToString(), 0);
     }
+
+    //public static void SaveSetting(SettingsKeys key, int status)
+    //{
+    //    PlayerPrefs.SetInt(key.ToString(), status);
+    //}
+
+    //public static int GetSetting(SettingsKeys key)
+    //{
+    //    return PlayerPrefs.GetInt(key.ToString());
+    //}
 
     public static void ResetRecords()
     {
-        foreach (string key in Enum.GetNames(typeof(Keys)))
+        foreach (string key in Enum.GetNames(typeof(RecordKeys)))
         {
             PlayerPrefs.SetInt(key, 0);
         }

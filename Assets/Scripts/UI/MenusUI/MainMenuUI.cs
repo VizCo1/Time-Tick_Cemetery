@@ -17,6 +17,7 @@ public class MainMenuUI : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField] private Button _levelSelectorButton;
+    [SerializeField] private Button _settingsButton;
     [SerializeField] private Button _quitButton;
     [SerializeField] private Transform _buttonsTransform;
     [SerializeField] private Transform _buttonsGoToTransform;
@@ -24,8 +25,14 @@ public class MainMenuUI : MonoBehaviour
     private void Awake()
     {
         _levelSelectorButton.onClick.AddListener(() => SceneManager.LoadScene(Loader.Scene.LevelSelectorScene.ToString()));
-
+        _settingsButton.onClick.AddListener(() => SceneManager.LoadScene(Loader.Scene.OptionsScene.ToString()));
+#if !UNITY_WEBGL
         _quitButton.onClick.AddListener(() => Application.Quit());
+#else
+        Destroy(_quitButton.gameObject);
+#endif
+
+        SettingsManager.InitSettings();
     }
 
     private void Start()

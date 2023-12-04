@@ -20,8 +20,14 @@ public class DashUI : MonoBehaviour
     {
         InputDeviceChangeHandler.Instance.OnGamepad += InputDeviceChangeHandler_OnGamepad;
         InputDeviceChangeHandler.Instance.OnKeyboard += InputDeviceChangeHandler_OnKeyboard;
+        //InputDeviceChangeHandler.Instance.OnMobile += InputDeviceChangeHandler_OnMobile;
         Hide();
     }
+
+    //private void InputDeviceChangeHandler_OnMobile(object sender, System.EventArgs e)
+    //{
+    //    throw new System.NotImplementedException();
+    //}
 
     private void OnDestroy()
     {

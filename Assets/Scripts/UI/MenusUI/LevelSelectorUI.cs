@@ -32,7 +32,7 @@ public class LevelSelectorUI : MonoBehaviour
     {
         _level1Button.onClick.AddListener(() => Loader.Load(Loader.Scene.Level_1));
         _level2Button.onClick.AddListener(() => Loader.Load(Loader.Scene.Level_2));
-        _resetStatsButton.onClick.AddListener(() => { SavingManager.ResetRecords(); UpdateLevelsStats(); });
+        _resetStatsButton.onClick.AddListener(() => { SavingManager.ResetRecords(); UpdateLevelsStats(); _resetStatsButton.interactable = false; });
 
         _backToMainMenuButton.onClick.AddListener(() => SceneManager.LoadScene(Loader.Scene.MainMenuScene.ToString()));
     }
