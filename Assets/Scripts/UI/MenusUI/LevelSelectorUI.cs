@@ -22,14 +22,17 @@ public class LevelSelectorUI : MonoBehaviour
     [SerializeField] private Transform _buttonsGoToTransform;
 
     [Header("Stats")]
+    [SerializeField] private Button _resetStatsButton;
     [SerializeField] private LevelStats[] _levelsStats;
     [SerializeField] private Transform _statsTransform;
     [SerializeField] private Transform _statsGoToTransform;
+
 
     private void Awake()
     {
         _level1Button.onClick.AddListener(() => Loader.Load(Loader.Scene.Level_1));
         _level2Button.onClick.AddListener(() => Loader.Load(Loader.Scene.Level_2));
+        _resetStatsButton.onClick.AddListener(() => { SavingManager.ResetRecords(); UpdateLevelsStats(); });
 
         _backToMainMenuButton.onClick.AddListener(() => SceneManager.LoadScene(Loader.Scene.MainMenuScene.ToString()));
     }
