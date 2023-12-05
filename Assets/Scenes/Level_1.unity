@@ -4086,8 +4086,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _extraTime: 6
-  _minExtraTime: 1.5
-  _decreaseExtraTime: 0.5
+  _minExtraTime: 1
+  _decreaseExtraTime: 1
   _gamePlayingTimerMax: 30
   _levelKey: 0
 --- !u!4 &172947127
@@ -38394,7 +38394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1604395351
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49038,7 +49038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2085240194
 RectTransform:
   m_ObjectHideFlags: 0
