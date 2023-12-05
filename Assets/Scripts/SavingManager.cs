@@ -43,9 +43,9 @@ public static class SavingManager
         PlayerPrefs.SetInt(key.ToString(), value);
     }
 
-    public static int GetIntSetting(SettingsKeys key)
+    public static int GetIntSetting(SettingsKeys key, int defaultVal = 0)
     {
-        return PlayerPrefs.GetInt(key.ToString());
+        return PlayerPrefs.GetInt(key.ToString(), defaultVal);
     }
     
     public static float GetFloatSetting(SettingsKeys key, float defaultVal = 0f)

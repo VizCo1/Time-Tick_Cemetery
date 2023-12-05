@@ -8,6 +8,7 @@ public class MobileUI : MonoBehaviour
 {
 
     [SerializeField] private Button _dashButton;
+    [SerializeField] private Button _pauseButton;
 
     public static MobileUI Instance { get; private set; }
 
@@ -22,6 +23,7 @@ public class MobileUI : MonoBehaviour
         {
             LevelGameManager.Instance.OnStateChanged += LevelGameManager_OnStateChanged;
             _dashButton.onClick.AddListener(() => GameInputManager.Instance.Dash_Performed_Mobile());
+            _pauseButton.onClick.AddListener(() => PauseUI.Instance.Show());
         }
 
         Hide();
@@ -40,9 +42,15 @@ public class MobileUI : MonoBehaviour
         }
     }
 
-    private void Show() => gameObject.SetActive(true);
+    public void Show()
+    {
+        gameObject.SetActive(true);
+    }
 
-    private void Hide() => gameObject.SetActive(false);
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
 
     public void SetDashButtonInteractable(bool setter) => _dashButton.interactable = setter;
 }

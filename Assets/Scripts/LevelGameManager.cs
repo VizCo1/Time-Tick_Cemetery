@@ -7,6 +7,7 @@ public class LevelGameManager : MonoBehaviour
     public static LevelGameManager Instance { get; private set; }
 
     public event Action OnStateChanged;
+    public event Action<int> OnKeyPickedUp;
 
     private enum State
     {
@@ -89,6 +90,8 @@ public class LevelGameManager : MonoBehaviour
     public void KeyPickedUp()
     {
         _numberOfKeys++;
+
+        OnKeyPickedUp?.Invoke(_numberOfKeys);
 
         if (_numberOfKeys % 5 == 0)
         {

@@ -13,6 +13,7 @@ public class GameInputManager : MonoBehaviour
     public event EventHandler OnDashPerformed;
     public event EventHandler OnMovePerformed;
     public event EventHandler OnMoveCanceled;
+    public event EventHandler OnPausePerformed;
 
     private PlayerInputActions _playerInputActions;
 
@@ -30,7 +31,8 @@ public class GameInputManager : MonoBehaviour
 
             _playerInputActions.Player.Dash.performed += Dash_Performed;
             _playerInputActions.Player.Move.performed += Move_Performed;
-            _playerInputActions.Player.Move.canceled += Move_Canceled;      
+            _playerInputActions.Player.Move.canceled += Move_Canceled;
+            _playerInputActions.Player.Pause.performed += Pause_Performed;
         }
 
         Instance = this;
@@ -48,9 +50,15 @@ public class GameInputManager : MonoBehaviour
             _playerInputActions.Player.Dash.performed -= Dash_Performed;
             _playerInputActions.Player.Move.performed -= Move_Performed;
             _playerInputActions.Player.Move.canceled -= Move_Canceled;
+            _playerInputActions.Player.Pause.performed -= Pause_Performed;
 
             _playerInputActions.Dispose();
         }
+    }
+
+    private void Pause_Performed(InputAction.CallbackContext obj)
+    {
+        OnPausePerformed?.Invoke(this, EventArgs.Empty);
     }
 
     private void Move_Canceled(InputAction.CallbackContext obj)

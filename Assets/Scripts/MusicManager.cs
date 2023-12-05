@@ -47,4 +47,14 @@ public class MusicManager : MonoBehaviour
         _music.Stop();
     }
 
+    public void PauseMusic()
+    {
+        _music.Pause();
+    }
+
+    public void ResumeMusic()
+    {
+        _music.UnPause();
+    }
+
 }

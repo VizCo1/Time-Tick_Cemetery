@@ -25,7 +25,7 @@ public static class SettingsManager
             IsMobile = SavingManager.GetIntSetting(SavingManager.SettingsKeys.IsMobile);
         }
 
-        CameraRotates = SavingManager.GetIntSetting(SavingManager.SettingsKeys.CameraRotates);
+        CameraRotates = SavingManager.GetIntSetting(SavingManager.SettingsKeys.CameraRotates, 1);
 
         MusicVolume = SavingManager.GetFloatSetting(SavingManager.SettingsKeys.MusicVolume, 1f);
         SFXVolume = SavingManager.GetFloatSetting(SavingManager.SettingsKeys.SoundsVolume, 1f);
