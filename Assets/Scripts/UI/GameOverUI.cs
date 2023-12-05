@@ -30,7 +30,7 @@ public class GameOverUI : MonoBehaviour
             _pickedUpKeysText.SetText(LevelGameManager.Instance.GetNumberOfKeys().ToString());
 
             MusicManager.Instance.StopMusic();
-            SoundManager.Instance.PlayGameOverSound();
+            SoundsManager.Instance.PlayGameOverSound();
 
             Loader.SetTargetScene(Loader.Scene.LevelSelectorScene);
             _loadingBarUI.StartLoadingBar();

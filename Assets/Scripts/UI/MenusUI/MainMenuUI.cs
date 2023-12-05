@@ -31,8 +31,6 @@ public class MainMenuUI : MonoBehaviour
 #else
         Destroy(_quitButton.gameObject);
 #endif
-
-        SettingsManager.InitSettings();
     }
 
     private void Start()

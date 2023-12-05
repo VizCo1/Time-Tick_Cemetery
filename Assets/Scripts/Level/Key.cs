@@ -15,7 +15,7 @@ public class Key : MonoBehaviour
             transform.position = Vector3.zero;
             QuadrantManager.Instance.ChangeRandomVariant();
             LevelGameManager.Instance.KeyPickedUp();
-            SoundManager.Instance.PlayKeySound(0.75f);
+            SoundsManager.Instance.PlayKeySound(0.75f);
         }
     }
 }

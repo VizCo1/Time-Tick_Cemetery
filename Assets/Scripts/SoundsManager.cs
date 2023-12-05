@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class SoundManager : MonoBehaviour
+public class SoundsManager : MonoBehaviour
 {
-
-    //private const string PLAYER_PREFS_SOUND_EFFECTS_VOLUME = "SoundEffectsVolume";
-
-    public static SoundManager Instance { get; private set; }
+    public static SoundsManager Instance { get; private set; }
 
     [SerializeField] private AudioClipsSO _audioClipsSO;
 
@@ -61,18 +58,4 @@ public class SoundManager : MonoBehaviour
     {
         _clockAudioSource.Play();
     }
-
-    /*public void ChangeVolume()
-    {
-        _volume += .1f;
-        if (_volume > 1f)
-        {
-            _volume = 0f;
-        }
-
-        PlayerPrefs.SetFloat(PLAYER_PREFS_SOUND_EFFECTS_VOLUME, _volume);
-        PlayerPrefs.Save();
-    }
-
-    public float GetVolume() => _volume;*/
 }

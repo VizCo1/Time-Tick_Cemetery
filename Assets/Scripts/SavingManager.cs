@@ -13,6 +13,8 @@ public static class SavingManager
     {
         IsMobile,
         CameraRotates,
+        MusicVolume,
+        SoundsVolume,
     }
 
     public static void SaveRecord(RecordKeys key, int record)
@@ -29,6 +31,11 @@ public static class SavingManager
     {
         PlayerPrefs.SetInt(key.ToString(), status);
     }
+    
+    public static void SaveSetting(SettingsKeys key, float value)
+    {
+        PlayerPrefs.SetFloat(key.ToString(), value);
+    }
 
     public static void SaveSetting(SettingsKeys key, bool status)
     {
@@ -36,9 +43,14 @@ public static class SavingManager
         PlayerPrefs.SetInt(key.ToString(), value);
     }
 
-    public static int GetSetting(SettingsKeys key)
+    public static int GetIntSetting(SettingsKeys key)
     {
         return PlayerPrefs.GetInt(key.ToString());
+    }
+    
+    public static float GetFloatSetting(SettingsKeys key, float defaultVal = 0f)
+    {
+        return PlayerPrefs.GetFloat(key.ToString(), defaultVal);
     }
 
     public static void ResetRecords()

@@ -50,7 +50,7 @@ public class PlayerDashing : MonoBehaviour
             {
                 StartingResetDash();
 
-                SoundManager.Instance.PlayDashSound(transform.position, 1.2f);
+                SoundsManager.Instance.PlayDashSound(transform.position, 1.2f);
                 
                 // Push
                 Vector3 direction = _fencheHole.transform.position - _fencheHole.GetCloserStartingPoint(transform.position);

@@ -24,7 +24,7 @@ public class TimerUI : MonoBehaviour
 
             if (_timerImage.fillAmount < _soundTime)
             {
-                SoundManager.Instance.PlayClockSound();
+                SoundsManager.Instance.PlayClockSound();
                 _soundTime -= _timeToSubtract;
             }
         }
