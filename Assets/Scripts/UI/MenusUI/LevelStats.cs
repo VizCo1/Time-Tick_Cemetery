@@ -21,4 +21,10 @@ public class LevelStats : MonoBehaviour
         }
         _numberOfKeysText.SetText(Record.ToString());
     }
+
+    public void ResetStats()
+    {
+        Record = SavingManager.GetRecord(_key);
+        _numberOfKeysText.SetText(Record.ToString());
+    }
 }

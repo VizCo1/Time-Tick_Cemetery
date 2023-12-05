@@ -2248,7 +2248,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5626e39d9dd268f47be8e1101c187580,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 99833091}
   m_SourcePrefab: {fileID: 100100000, guid: 5626e39d9dd268f47be8e1101c187580, type: 3}
 --- !u!4 &99833089 stripped
 Transform:
@@ -2256,6 +2260,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 99833088}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &99833090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5626e39d9dd268f47be8e1101c187580,
+    type: 3}
+  m_PrefabInstance: {fileID: 99833088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &99833091
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99833090}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.3611865, y: 0.64, z: 0.119999886}
+  m_Center: {x: -0.52451634, y: 0.32, z: -0.49999994}
 --- !u!1001 &102318117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13576,7 +13607,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -16243,7 +16274,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5626e39d9dd268f47be8e1101c187580,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 716130745}
   m_SourcePrefab: {fileID: 100100000, guid: 5626e39d9dd268f47be8e1101c187580, type: 3}
 --- !u!4 &716130743 stripped
 Transform:
@@ -16251,6 +16286,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 716130742}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &716130744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5626e39d9dd268f47be8e1101c187580,
+    type: 3}
+  m_PrefabInstance: {fileID: 716130742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &716130745
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716130744}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2640429, y: 0.64, z: 0.119999886}
+  m_Center: {x: 0.017840862, y: 0.32, z: -0.49999994}
 --- !u!1001 &724171844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19918,7 +19980,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5626e39d9dd268f47be8e1101c187580,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 911653786}
   m_SourcePrefab: {fileID: 100100000, guid: 5626e39d9dd268f47be8e1101c187580, type: 3}
 --- !u!4 &911653784 stripped
 Transform:
@@ -19926,6 +19992,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 911653783}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &911653785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5626e39d9dd268f47be8e1101c187580,
+    type: 3}
+  m_PrefabInstance: {fileID: 911653783}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &911653786
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911653785}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.674756, y: 0.64, z: 0.119999886}
+  m_Center: {x: -0.15646219, y: 0.32, z: -0.49999994}
 --- !u!1001 &916382313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26578,6 +26671,7 @@ MonoBehaviour:
         m_Calls: []
   DebugActive: 0
   FeedbacksList:
+  - rid: 9119511192289148931
   - rid: 9119511179241193520
   - rid: 9119511192289148929
   - rid: 9119511192289148928
@@ -28332,6 +28426,82 @@ MonoBehaviour:
         StateOnSkip: 1
         SetStateOnPlayerComplete: 1
         StateOnPlayerComplete: 0
+    - rid: 9119511192289148931
+      type: {class: MMF_Pause, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
+      data:
+        Active: 1
+        UniqueID: -1051949469
+        Label: Pause
+        ChannelMode: 0
+        Channel: 0
+        MMChannelDefinition: {fileID: 0}
+        Chance: 100
+        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        Timing:
+          TimescaleMode: 0
+          ExcludeFromHoldingPauses: 0
+          ContributeToTotalDuration: 1
+          InitialDelay: 0
+          CooldownDuration: 0
+          InterruptsOnStop: 1
+          NumberOfRepeats: 0
+          RepeatForever: 0
+          DelayBetweenRepeats: 1
+          MMFeedbacksDirectionCondition: 0
+          PlayDirection: 0
+          ConstantIntensity: 0
+          UseIntensityInterval: 0
+          IntensityIntervalMin: 0
+          IntensityIntervalMax: 0
+          Sequence: {fileID: 0}
+          TrackID: 0
+          Quantized: 0
+          TargetBPM: 120
+        AutomatedTargetAcquisition:
+          Mode: 0
+          ChildIndex: 0
+        RandomizeOutput: 0
+        RandomMultiplier: {x: 0.8, y: 1}
+        RandomizeDuration: 0
+        RandomDurationMultiplier: {x: 0.5, y: 2}
+        UseRange: 0
+        RangeDistance: 5
+        UseRangeFalloff: 0
+        RangeFalloff:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        RemapRangeFalloff: {x: 0, y: 1}
+        Owner: {fileID: 1258190991}
+        DebugActive: 0
+        PauseDuration: 1
+        RandomizePauseDuration: 0
+        MinPauseDuration: 1
+        MaxPauseDuration: 3
+        RandomizeOnEachPlay: 1
+        ScriptDriven: 0
+        AutoResume: 0
+        AutoResumeAfter: 0.25
 --- !u!1001 &1260637769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41380,7 +41550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1846889463
 Transform:
   m_ObjectHideFlags: 0

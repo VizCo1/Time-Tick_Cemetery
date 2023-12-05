@@ -26,5 +26,6 @@ public class StartingLevelAnimation : MonoBehaviour
     private void Start()
     {
         _MMF_Player.PlayFeedbacks();
+        _MMF_Player.PlayerCompleteFeedbacks();
     }
 }
