@@ -446,7 +446,6 @@ MonoBehaviour:
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
-    serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
@@ -493,18 +492,24 @@ MonoBehaviour:
     m_Style: 1
     m_Time: 2
     m_CustomCurve:
-      serializedVersion: 2
       m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
   m_CustomBlends: {fileID: 0}
+  m_OutputCamera: {fileID: 330585545}
+  m_TargetOverride: {fileID: 0}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
+  m_LastFrameUpdated: 2
+  mNextFrameId: 1
+  mActiveCameraPreviousFrameGameObject: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +974,7 @@ MonoBehaviour:
   _minInnerSpotAngle: 80
   _maxInnerSpotAngle: 125
   _innerSpotAngleTweenDuration: 1.5
+  _light: {fileID: 0}
 --- !u!114 &768118394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,6 +1095,10 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
+  m_Colliders: []
+  m_PreviousLayer: 0
+  m_PreviousPriority: 0
+  m_InternalProfile: {fileID: 0}
 --- !u!4 &832575519
 Transform:
   m_ObjectHideFlags: 0
@@ -1129,12 +1139,16 @@ MonoBehaviour:
   Shaking: 0
   ForwardDirection: 1
   TimescaleMode: 0
+  _listeningToEvents: 0
+  _shakeStartedTimestamp: -3.4028235e+38
+  _remappedTimeSinceStart: 0
+  _resetShakerValuesAfterShake: 0
+  _resetTargetValuesAfterShake: 0
+  _journey: 0
   RelativeIntensity: 0
   ShakeIntensity:
-    serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
@@ -1142,8 +1156,7 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
-    - serializedVersion: 3
-      time: 0.5
+    - time: 0.5
       value: 1
       inSlope: 0
       outSlope: 0
@@ -1151,8 +1164,7 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
-    - serializedVersion: 3
-      time: 1
+    - time: 1
       value: 0
       inSlope: 0
       outSlope: 0
@@ -1165,6 +1177,18 @@ MonoBehaviour:
     m_RotationOrder: 4
   RemapIntensityZero: 0
   RemapIntensityOne: 1
+  _volume: {fileID: 0}
+  _chromaticAberration: {fileID: 0}
+  _initialIntensity: 0
+  _originalShakeDuration: 0
+  _originalShakeIntensity:
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _originalRemapIntensityZero: 0
+  _originalRemapIntensityOne: 0
+  _originalRelativeIntensity: 0
 --- !u!1 &1068136680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,10 +1238,8 @@ MonoBehaviour:
   RangeDistance: 5
   UseRangeFalloff: 0
   RangeFalloff:
-    serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
@@ -1225,8 +1247,7 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
-    - serializedVersion: 3
-      time: 1
+    - time: 1
       value: 0
       inSlope: 0
       outSlope: 0
@@ -1251,25 +1272,53 @@ MonoBehaviour:
     OnPlay:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnPause:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnResume:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnRevert:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnComplete:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnRestoreInitialValues:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnSkipToTheEnd:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+    <OnPlayIsNull>k__BackingField: 0
+    <OnPauseIsNull>k__BackingField: 0
+    <OnResumeIsNull>k__BackingField: 0
+    <OnRevertIsNull>k__BackingField: 0
+    <OnCompleteIsNull>k__BackingField: 0
+    <OnRestoreInitialValuesIsNull>k__BackingField: 0
+    <OnSkipToTheEndIsNull>k__BackingField: 0
   DebugActive: 0
+  <IsPlaying>k__BackingField: 0
+  <TimesPlayed>k__BackingField: 0
+  <InScriptDrivenPause>k__BackingField: 0
+  <ContainsLoop>k__BackingField: 0
+  <ShouldRevertOnNextPlay>k__BackingField: 0
+  _startTime: 0
+  _holdingMax: 0
+  _lastStartAt: -3.4028235e+38
+  _lastStartFrame: -1
+  _pauseFound: 1
+  _totalDuration: 0
+  _shouldStop: 0
+  _randomDurationMultiplier: 1
+  _lastOnEnableFrame: -1
   FeedbacksList:
   - rid: 9119511222908878863
   - rid: 9119511222908878864
@@ -1280,6 +1329,9 @@ MonoBehaviour:
   PerformanceMode: 0
   StopFeedbacksOnDisable: 0
   PlayCount: 0
+  <SkippingToTheEnd>k__BackingField: 0
+  _cachedTotalDuration: 1.9
+  _initialized: 0
   references:
     version: 2
     RefIds:
@@ -1293,7 +1345,11 @@ MonoBehaviour:
         Channel: 0
         MMChannelDefinition: {fileID: 0}
         Chance: 100
-        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        DisplayColor:
+          r: 0
+          g: 0
+          b: 0
+          a: 1
         Timing:
           TimescaleMode: 0
           ExcludeFromHoldingPauses: 0
@@ -1314,6 +1370,9 @@ MonoBehaviour:
           TrackID: 0
           Quantized: 0
           TargetBPM: 120
+          <UseScriptDrivenTimescale>k__BackingField: 0
+          <ScriptDrivenDeltaTime>k__BackingField: 0
+          <ScriptDrivenTime>k__BackingField: 0
         AutomatedTargetAcquisition:
           Mode: 0
           ChildIndex: 0
@@ -1325,10 +1384,8 @@ MonoBehaviour:
         RangeDistance: 5
         UseRangeFalloff: 0
         RangeFalloff:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 1
             inSlope: 0
             outSlope: 0
@@ -1336,8 +1393,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 0
             inSlope: 0
             outSlope: 0
@@ -1351,6 +1407,28 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 1068136681}
         DebugActive: 0
+        <ScriptDrivenPause>k__BackingField: 0
+        <ScriptDrivenPauseAutoResume>k__BackingField: 0
+        <IsPlaying>k__BackingField: 0
+        <IsExpanded>k__BackingField: 0
+        _lastPlayTimestamp: -1
+        _playsLeft: 0
+        _initialized: 0
+        _requiresSetup: 0
+        _requiredTarget: '[Player]'
+        _randomDurationMultiplier: 1
+        _sequenceTrackID: 0
+        _beatInterval: 0
+        BeatThisFrame: 0
+        LastBeatIndex: 0
+        CurrentSequenceIndex: 0
+        LastBeatTimestamp: 0
+        _channelData:
+          MMChannelMode: 0
+          Channel: 0
+          MMChannelDefinition: {fileID: 0}
+        _totalDuration: 1
+        _indexInOwnerFeedbackList: 0
         AnimatePositionTarget: {fileID: 578984089}
         Mode: 2
         Space: 0
@@ -1360,10 +1438,8 @@ MonoBehaviour:
           MMTweenDefinitionType: 1
           MMTweenCurve: 4
           Curve:
-            serializedVersion: 2
             m_Curve:
-            - serializedVersion: 3
-              time: 0
+            - time: 0
               value: 0
               inSlope: 0
               outSlope: 0
@@ -1371,8 +1447,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 1
+            - time: 1
               value: 1
               inSlope: 0
               outSlope: 0
@@ -1393,10 +1468,8 @@ MonoBehaviour:
           MMTweenDefinitionType: 1
           MMTweenCurve: 4
           Curve:
-            serializedVersion: 2
             m_Curve:
-            - serializedVersion: 3
-              time: 0
+            - time: 0
               value: 0
               inSlope: 0
               outSlope: 0
@@ -1404,8 +1477,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 0.3
+            - time: 0.3
               value: 1
               inSlope: 0
               outSlope: 0
@@ -1413,8 +1485,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 0.6
+            - time: 0.6
               value: -1
               inSlope: 0
               outSlope: 0
@@ -1422,8 +1493,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 1
+            - time: 1
               value: 0
               inSlope: 0
               outSlope: 0
@@ -1440,10 +1510,8 @@ MonoBehaviour:
           MMTweenDefinitionType: 1
           MMTweenCurve: 4
           Curve:
-            serializedVersion: 2
             m_Curve:
-            - serializedVersion: 3
-              time: 0
+            - time: 0
               value: 0
               inSlope: 0
               outSlope: 0
@@ -1451,8 +1519,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 0.3
+            - time: 0.3
               value: 1
               inSlope: 0
               outSlope: 0
@@ -1460,8 +1527,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 0.6
+            - time: 0.6
               value: -1
               inSlope: 0
               outSlope: 0
@@ -1469,8 +1535,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 1
+            - time: 1
               value: 0
               inSlope: 0
               outSlope: 0
@@ -1487,10 +1552,8 @@ MonoBehaviour:
           MMTweenDefinitionType: 1
           MMTweenCurve: 4
           Curve:
-            serializedVersion: 2
             m_Curve:
-            - serializedVersion: 3
-              time: 0
+            - time: 0
               value: 0
               inSlope: 0
               outSlope: 0
@@ -1498,8 +1561,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 0.3
+            - time: 0.3
               value: 1
               inSlope: 0
               outSlope: 0
@@ -1507,8 +1569,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 0.6
+            - time: 0.6
               value: -1
               inSlope: 0
               outSlope: 0
@@ -1516,8 +1577,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 1
+            - time: 1
               value: 0
               inSlope: 0
               outSlope: 0
@@ -1537,29 +1597,34 @@ MonoBehaviour:
         InitialPositionTransform: {fileID: 0}
         DestinationPositionTransform: {fileID: 763372800}
         AnimatePositionCurveX:
-          serializedVersion: 2
           m_Curve: []
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
         AnimatePositionCurveY:
-          serializedVersion: 2
           m_Curve: []
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
         AnimatePositionCurveZ:
-          serializedVersion: 2
           m_Curve: []
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
         AnimatePositionCurve:
-          serializedVersion: 2
           m_Curve: []
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
+        _newPosition: {x: 0, y: 0, z: 0}
+        _currentPosition: {x: 0, y: 0, z: 0}
+        _rectTransform: {fileID: 0}
+        _initialPosition: {x: 0, y: 0, z: 0}
+        _destinationPosition: {x: 0, y: 0, z: 0}
+        _workInitialPosition: {x: 0, y: 0, z: 0}
+        _workDestinationPosition: {x: 0, y: 0, z: 0}
+        _remapCurveZero: 0
+        _remapCurveOne: 0
     - rid: 9119511222908878864
       type: {class: MMF_Animation, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
@@ -1570,7 +1635,11 @@ MonoBehaviour:
         Channel: 0
         MMChannelDefinition: {fileID: 0}
         Chance: 100
-        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        DisplayColor:
+          r: 0
+          g: 0
+          b: 0
+          a: 1
         Timing:
           TimescaleMode: 0
           ExcludeFromHoldingPauses: 0
@@ -1591,6 +1660,9 @@ MonoBehaviour:
           TrackID: 0
           Quantized: 0
           TargetBPM: 120
+          <UseScriptDrivenTimescale>k__BackingField: 0
+          <ScriptDrivenDeltaTime>k__BackingField: 0
+          <ScriptDrivenTime>k__BackingField: 0
         AutomatedTargetAcquisition:
           Mode: 0
           ChildIndex: 0
@@ -1602,10 +1674,8 @@ MonoBehaviour:
         RangeDistance: 5
         UseRangeFalloff: 0
         RangeFalloff:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 1
             inSlope: 0
             outSlope: 0
@@ -1613,8 +1683,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 0
             inSlope: 0
             outSlope: 0
@@ -1628,6 +1697,28 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 1068136681}
         DebugActive: 0
+        <ScriptDrivenPause>k__BackingField: 0
+        <ScriptDrivenPauseAutoResume>k__BackingField: 0
+        <IsPlaying>k__BackingField: 0
+        <IsExpanded>k__BackingField: 0
+        _lastPlayTimestamp: -1
+        _playsLeft: 0
+        _initialized: 0
+        _requiresSetup: 0
+        _requiredTarget: '[PlayerModel]'
+        _randomDurationMultiplier: 1
+        _sequenceTrackID: 0
+        _beatInterval: 0
+        BeatThisFrame: 0
+        LastBeatIndex: 0
+        CurrentSequenceIndex: 0
+        LastBeatTimestamp: 0
+        _channelData:
+          MMChannelMode: 0
+          Channel: 0
+          MMChannelDefinition: {fileID: 0}
+        _totalDuration: 0
+        _indexInOwnerFeedbackList: 0
         BoundAnimator: {fileID: 1320644792}
         ExtraBoundAnimators: []
         DeclaredDuration: 0
@@ -1655,6 +1746,12 @@ MonoBehaviour:
         FloatValueMin: 0
         FloatValueMax: 5
         FloatIncrement: 1
+        _triggerParameter: 0
+        _boolParameter: 0
+        _intParameter: 0
+        _floatParameter: 0
+        _randomTriggerParameters: 
+        _randomBoolParameters: 
     - rid: 9119511222908878865
       type: {class: MMF_Pause, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
@@ -1665,7 +1762,11 @@ MonoBehaviour:
         Channel: 0
         MMChannelDefinition: {fileID: 0}
         Chance: 100
-        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        DisplayColor:
+          r: 0
+          g: 0
+          b: 0
+          a: 1
         Timing:
           TimescaleMode: 0
           ExcludeFromHoldingPauses: 0
@@ -1686,6 +1787,9 @@ MonoBehaviour:
           TrackID: 0
           Quantized: 0
           TargetBPM: 120
+          <UseScriptDrivenTimescale>k__BackingField: 0
+          <ScriptDrivenDeltaTime>k__BackingField: 0
+          <ScriptDrivenTime>k__BackingField: 0
         AutomatedTargetAcquisition:
           Mode: 0
           ChildIndex: 0
@@ -1697,10 +1801,8 @@ MonoBehaviour:
         RangeDistance: 5
         UseRangeFalloff: 0
         RangeFalloff:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 1
             inSlope: 0
             outSlope: 0
@@ -1708,8 +1810,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 0
             inSlope: 0
             outSlope: 0
@@ -1723,6 +1824,28 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 1068136681}
         DebugActive: 0
+        <ScriptDrivenPause>k__BackingField: 0
+        <ScriptDrivenPauseAutoResume>k__BackingField: 0
+        <IsPlaying>k__BackingField: 0
+        <IsExpanded>k__BackingField: 0
+        _lastPlayTimestamp: -1
+        _playsLeft: 0
+        _initialized: 0
+        _requiresSetup: 0
+        _requiredTarget: 
+        _randomDurationMultiplier: 1
+        _sequenceTrackID: 0
+        _beatInterval: 0
+        BeatThisFrame: 0
+        LastBeatIndex: 0
+        CurrentSequenceIndex: 0
+        LastBeatTimestamp: 0
+        _channelData:
+          MMChannelMode: 0
+          Channel: 0
+          MMChannelDefinition: {fileID: 0}
+        _totalDuration: 0.9
+        _indexInOwnerFeedbackList: 0
         PauseDuration: 0.9
         RandomizePauseDuration: 0
         MinPauseDuration: 1
@@ -1741,7 +1864,11 @@ MonoBehaviour:
         Channel: 0
         MMChannelDefinition: {fileID: 0}
         Chance: 100
-        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        DisplayColor:
+          r: 0
+          g: 0
+          b: 0
+          a: 1
         Timing:
           TimescaleMode: 0
           ExcludeFromHoldingPauses: 0
@@ -1762,6 +1889,9 @@ MonoBehaviour:
           TrackID: 0
           Quantized: 0
           TargetBPM: 120
+          <UseScriptDrivenTimescale>k__BackingField: 0
+          <ScriptDrivenDeltaTime>k__BackingField: 0
+          <ScriptDrivenTime>k__BackingField: 0
         AutomatedTargetAcquisition:
           Mode: 0
           ChildIndex: 0
@@ -1773,10 +1903,8 @@ MonoBehaviour:
         RangeDistance: 5
         UseRangeFalloff: 0
         RangeFalloff:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 1
             inSlope: 0
             outSlope: 0
@@ -1784,8 +1912,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 0
             inSlope: 0
             outSlope: 0
@@ -1799,6 +1926,28 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 1068136681}
         DebugActive: 0
+        <ScriptDrivenPause>k__BackingField: 0
+        <ScriptDrivenPauseAutoResume>k__BackingField: 0
+        <IsPlaying>k__BackingField: 0
+        <IsExpanded>k__BackingField: 0
+        _lastPlayTimestamp: -1
+        _playsLeft: 0
+        _initialized: 0
+        _requiresSetup: 0
+        _requiredTarget: '[PlayerModel]'
+        _randomDurationMultiplier: 1
+        _sequenceTrackID: 0
+        _beatInterval: 0
+        BeatThisFrame: 0
+        LastBeatIndex: 0
+        CurrentSequenceIndex: 0
+        LastBeatTimestamp: 0
+        _channelData:
+          MMChannelMode: 0
+          Channel: 0
+          MMChannelDefinition: {fileID: 0}
+        _totalDuration: 0
+        _indexInOwnerFeedbackList: 0
         BoundAnimator: {fileID: 1320644792}
         ExtraBoundAnimators: []
         DeclaredDuration: 0
@@ -1826,6 +1975,12 @@ MonoBehaviour:
         FloatValueMin: 0
         FloatValueMax: 5
         FloatIncrement: 1
+        _triggerParameter: 0
+        _boolParameter: 0
+        _intParameter: 0
+        _floatParameter: 0
+        _randomTriggerParameters: 
+        _randomBoolParameters: 
     - rid: 9119511222908878867
       type: {class: MMF_Position, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
@@ -1836,7 +1991,11 @@ MonoBehaviour:
         Channel: 0
         MMChannelDefinition: {fileID: 0}
         Chance: 100
-        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        DisplayColor:
+          r: 0
+          g: 0
+          b: 0
+          a: 1
         Timing:
           TimescaleMode: 0
           ExcludeFromHoldingPauses: 0
@@ -1857,6 +2016,9 @@ MonoBehaviour:
           TrackID: 0
           Quantized: 0
           TargetBPM: 120
+          <UseScriptDrivenTimescale>k__BackingField: 0
+          <ScriptDrivenDeltaTime>k__BackingField: 0
+          <ScriptDrivenTime>k__BackingField: 0
         AutomatedTargetAcquisition:
           Mode: 0
           ChildIndex: 0
@@ -1868,10 +2030,8 @@ MonoBehaviour:
         RangeDistance: 5
         UseRangeFalloff: 0
         RangeFalloff:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 1
             inSlope: 0
             outSlope: 0
@@ -1879,8 +2039,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 0
             inSlope: 0
             outSlope: 0
@@ -1894,6 +2053,28 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 1068136681}
         DebugActive: 0
+        <ScriptDrivenPause>k__BackingField: 0
+        <ScriptDrivenPauseAutoResume>k__BackingField: 0
+        <IsPlaying>k__BackingField: 0
+        <IsExpanded>k__BackingField: 0
+        _lastPlayTimestamp: -1
+        _playsLeft: 0
+        _initialized: 0
+        _requiresSetup: 0
+        _requiredTarget: '[Key]'
+        _randomDurationMultiplier: 1
+        _sequenceTrackID: 0
+        _beatInterval: 0
+        BeatThisFrame: 0
+        LastBeatIndex: 0
+        CurrentSequenceIndex: 0
+        LastBeatTimestamp: 0
+        _channelData:
+          MMChannelMode: 0
+          Channel: 0
+          MMChannelDefinition: {fileID: 0}
+        _totalDuration: 1
+        _indexInOwnerFeedbackList: 0
         AnimatePositionTarget: {fileID: 1389703885}
         Mode: 2
         Space: 0
@@ -1903,10 +2084,8 @@ MonoBehaviour:
           MMTweenDefinitionType: 1
           MMTweenCurve: 4
           Curve:
-            serializedVersion: 2
             m_Curve:
-            - serializedVersion: 3
-              time: 0
+            - time: 0
               value: 0
               inSlope: 0
               outSlope: 0
@@ -1914,8 +2093,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 1
+            - time: 1
               value: 1
               inSlope: 0
               outSlope: 0
@@ -1936,10 +2114,8 @@ MonoBehaviour:
           MMTweenDefinitionType: 1
           MMTweenCurve: 4
           Curve:
-            serializedVersion: 2
             m_Curve:
-            - serializedVersion: 3
-              time: 0
+            - time: 0
               value: 0
               inSlope: 0
               outSlope: 0
@@ -1947,8 +2123,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 0.3
+            - time: 0.3
               value: 1
               inSlope: 0
               outSlope: 0
@@ -1956,8 +2131,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 0.6
+            - time: 0.6
               value: -1
               inSlope: 0
               outSlope: 0
@@ -1965,8 +2139,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 1
+            - time: 1
               value: 0
               inSlope: 0
               outSlope: 0
@@ -1983,10 +2156,8 @@ MonoBehaviour:
           MMTweenDefinitionType: 1
           MMTweenCurve: 4
           Curve:
-            serializedVersion: 2
             m_Curve:
-            - serializedVersion: 3
-              time: 0
+            - time: 0
               value: 0
               inSlope: 0
               outSlope: 0
@@ -1994,8 +2165,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 0.3
+            - time: 0.3
               value: 1
               inSlope: 0
               outSlope: 0
@@ -2003,8 +2173,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 0.6
+            - time: 0.6
               value: -1
               inSlope: 0
               outSlope: 0
@@ -2012,8 +2181,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 1
+            - time: 1
               value: 0
               inSlope: 0
               outSlope: 0
@@ -2030,10 +2198,8 @@ MonoBehaviour:
           MMTweenDefinitionType: 1
           MMTweenCurve: 4
           Curve:
-            serializedVersion: 2
             m_Curve:
-            - serializedVersion: 3
-              time: 0
+            - time: 0
               value: 0
               inSlope: 0
               outSlope: 0
@@ -2041,8 +2207,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 0.3
+            - time: 0.3
               value: 1
               inSlope: 0
               outSlope: 0
@@ -2050,8 +2215,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 0.6
+            - time: 0.6
               value: -1
               inSlope: 0
               outSlope: 0
@@ -2059,8 +2223,7 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - serializedVersion: 3
-              time: 1
+            - time: 1
               value: 0
               inSlope: 0
               outSlope: 0
@@ -2080,29 +2243,34 @@ MonoBehaviour:
         InitialPositionTransform: {fileID: 0}
         DestinationPositionTransform: {fileID: 48611612}
         AnimatePositionCurveX:
-          serializedVersion: 2
           m_Curve: []
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
         AnimatePositionCurveY:
-          serializedVersion: 2
           m_Curve: []
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
         AnimatePositionCurveZ:
-          serializedVersion: 2
           m_Curve: []
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
         AnimatePositionCurve:
-          serializedVersion: 2
           m_Curve: []
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
+        _newPosition: {x: 0, y: 0, z: 0}
+        _currentPosition: {x: 0, y: 0, z: 0}
+        _rectTransform: {fileID: 0}
+        _initialPosition: {x: 0, y: 0, z: 0}
+        _destinationPosition: {x: 0, y: 0, z: 0}
+        _workInitialPosition: {x: 0, y: 0, z: 0}
+        _workDestinationPosition: {x: 0, y: 0, z: 0}
+        _remapCurveZero: 0
+        _remapCurveOne: 0
 --- !u!4 &1068136682
 Transform:
   m_ObjectHideFlags: 0
@@ -2349,6 +2517,7 @@ MonoBehaviour:
   _minInnerSpotAngle: 28
   _maxInnerSpotAngle: 38
   _innerSpotAngleTweenDuration: 1.5
+  _light: {fileID: 0}
 --- !u!114 &1906286615
 MonoBehaviour:
   m_ObjectHideFlags: 0
