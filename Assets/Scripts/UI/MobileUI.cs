@@ -19,6 +19,7 @@ public class MobileUI : MonoBehaviour
 
     private void Start()
     {
+
         if (SettingsManager.IsMobile == 1)
         {
             LevelGameManager.Instance.OnStateChanged += LevelGameManager_OnStateChanged;

@@ -20,7 +20,7 @@ public static class SettingsManager
             IsMobile = 1;
             SavingManager.SaveSetting(SavingManager.SettingsKeys.IsMobile, IsMobile);
         }
-        else
+        else 
         {
             IsMobile = SavingManager.GetIntSetting(SavingManager.SettingsKeys.IsMobile);
         }
